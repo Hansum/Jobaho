@@ -10,7 +10,7 @@ const Navbar = () => {
           </Link>
         </div>
         <div>
-          <Link href="/">
+          <Link href="/jobSection">
             <a id="navbar2">Find a Job</a>
           </Link>
         </div>

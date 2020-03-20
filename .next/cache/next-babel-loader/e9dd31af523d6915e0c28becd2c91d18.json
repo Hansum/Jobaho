@@ -1,0 +1,1 @@
+{"ast":null,"code":"import Link from \"next/link\";","map":{"version":3,"sources":["C:/Users/chris/Desktop/jobaho/pages/jobSection.js"],"names":["Link"],"mappings":"AAAA,OAAOA,IAAP,MAAiB,WAAjB","sourcesContent":["import Link from \"next/link\";\r\n"]},"metadata":{},"sourceType":"module"}

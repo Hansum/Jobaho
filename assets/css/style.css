@@ -84,3 +84,11 @@ img {
 #card_image {
   object-fit: contain;
 }
+
+h1 {
+  color: white;
+  text-align: center;
+  font-family: "Sen", sans-serif;
+  margin-top: 25px;
+  font-size: 40px;
+}
