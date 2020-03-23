@@ -69,7 +69,7 @@ const Page = () => (
     </div> */}
     <div id="getStartBtn">
       <Link href="/">
-        <a className>Get Started</a>
+        <a>Get Started</a>
       </Link>
     </div>
     <div id="card">
