@@ -49,7 +49,7 @@
 
 import Layout from "../components/MyLayout";
 import Link from "next/link";
-import myImage from "../assets/images/job.jpg";
+import myImage from "../assets/images/cherry-success.svg";
 
 // const PostLink = props => (
 //   <li>
@@ -61,19 +61,20 @@ import myImage from "../assets/images/job.jpg";
 
 const Page = () => (
   <body>
-    <div id="mainTitle">
-      <p>Bringing your dream job closer to you!</p>
-    </div>
-    {/* <div id="getStartBtn">
-      <p>Get Started</p>
-    </div> */}
-    <div id="getStartBtn">
-      <Link href="/">
-        <a>Get Started</a>
-      </Link>
-    </div>
-    <div id="card">
-      <img className="card_image" src={myImage}></img>
+    <div className="row">
+      <div className="column">
+        <div className="column-left">
+          <p>Bringing IT jobs closer to you!</p>
+          <Link href="/">
+            <a>Get Started</a>
+          </Link>
+        </div>
+      </div>
+      <div className="column">
+        <div className="card">
+          <img className="card_image" src={myImage}></img>
+        </div>
+      </div>
     </div>
   </body>
 );

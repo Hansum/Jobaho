@@ -1,6 +1,17 @@
 const withImages = require("next-images");
-module.exports = withImages({
-  webpack(config, options) {
-    return config;
+const withSass = require("@zeit/next-sass");
+const compose = require("next-compose");
+
+const sassConfig = {
+  cssModules: false
+};
+
+module.exports = compose([
+  [withImages],
+  [withSass, sassConfig],
+  {
+    webpack: config => {
+      return config;
+    }
   }
-});
+]);

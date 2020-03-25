@@ -4,7 +4,7 @@ const getResults = require("../../pages/webscraper/scraper");
 
 router.get("/test", async function(req, res) {
   // const result = await getResults();
-  return res.json({ message: "check from node" });
+  return res.json({ message: "hello from node" });
 });
 
 router.get("/jobPosition", async function(req, res) {
