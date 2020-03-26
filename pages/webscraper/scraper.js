@@ -7,6 +7,9 @@ const companyName = [];
 const locations = [];
 const positions = [];
 const sampleArray = [];
+const jobResult = {
+  jobData: []
+};
 
 const fetchData = async () => {
   const result = await axios.get(webUrl);
@@ -42,12 +45,25 @@ const getResults = async () => {
   // });
   // console.dir(positions);
 
+  for (var i = 0; i < positions.length; i++) {
+    jobResult.jobData.push({
+      Job_Position: positions[i],
+      Job_Company_Name: companyName[i],
+      Job_Location: locations[i]
+    });
+  }
+
+  // return {
+  //   mynimo: {
+  //     positions,
+  //     companyName,
+  //     locations,
+  //     jobTitle
+  //   }
+  // };
   return {
     mynimo: {
-      positions,
-      companyName,
-      locations,
-      jobTitle
+      jobResult
     }
   };
 };

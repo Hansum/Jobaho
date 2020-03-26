@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 4);
+/******/ 	return __webpack_require__(__webpack_require__.s = 3);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -111,6 +111,10 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
  // import "../node_modules/bulma/css/bulma.css";
 
 /* harmony default export */ __webpack_exports__["default"] = (class extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
+  constructor(props) {
+    super(props);
+  }
+
   static async getInitialProps({
     req
   }) {
@@ -123,23 +127,41 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
   }
 
   jobCards() {
-    return __jsx("div", {
-      className: "centered"
-    }, __jsx("section", {
-      className: "cards"
-    }, __jsx("article", {
-      className: "job-card"
-    }, __jsx("h1", null, this.props.positionResult.mynimo.positions[2]), __jsx("h2", null, "Company: ", this.props.positionResult.mynimo.companyName[2])), __jsx("article", {
-      className: "job-card"
-    }, __jsx("h1", null, this.props.positionResult.mynimo.positions[3]), __jsx("h2", null, "Company: ", this.props.positionResult.mynimo.companyName[3])), __jsx("article", {
-      className: "job-card"
-    }, __jsx("h1", null, this.props.positionResult.mynimo.positions[10]), __jsx("h2", null, "Company: ", this.props.positionResult.mynimo.companyName[10])), __jsx("article", {
-      className: "job-card"
-    }, __jsx("h1", null, this.props.positionResult.mynimo.positions[15]), __jsx("h2", null, "Company: ", this.props.positionResult.mynimo.companyName[15]))));
+    // return this.props.positionResult.mynimo.jobResult.jobData.map(
+    //   (res, index) => {
+    //     const { Job_Position, Job_Company_Name, Job_Location } = res;
+    //     return (
+    //       <div className="centered" key={index}>
+    //         <section className="cards">
+    //           <article className="job-card">
+    //             <h1 key={index}>{Job_Position}</h1>
+    //             <h2 key={index}>{Job_Company_Name}</h2>
+    //             <h2 key={index}>{Job_Location}</h2>
+    //           </article>
+    //         </section>
+    //       </div>
+    //     );
+    //   }
+    // );
+    return this.props.positionResult.mynimo.jobResult.jobData.map((res, index) => {
+      const {
+        Job_Position,
+        Job_Company_Name,
+        Job_Location
+      } = res;
+      return __jsx("article", {
+        className: "job-card",
+        key: index
+      }, __jsx("h1", null, Job_Position), __jsx("h2", null, Job_Company_Name), __jsx("h2", null, Job_Location));
+    });
   }
 
   render() {
-    return __jsx("div", null, __jsx("div", null, __jsx("h1", null, "job Section"), this.jobCards()));
+    return __jsx("div", null, __jsx("div", null, __jsx("h1", null, "job Section"), __jsx("div", {
+      className: "centered"
+    }, __jsx("section", {
+      className: "cards"
+    }, this.jobCards()))));
   }
 
 }); // import React, { Component } from "react";
@@ -175,7 +197,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 /***/ }),
 
-/***/ 4:
+/***/ 3:
 /*!********************************!*\
   !*** multi ./pages/testing.js ***!
   \********************************/

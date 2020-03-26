@@ -3,6 +3,9 @@ import fetch from "isomorphic-unfetch";
 // import "../node_modules/bulma/css/bulma.css";
 
 export default class extends Component {
+  constructor(props) {
+    super(props);
+  }
   static async getInitialProps({ req }) {
     const baseUrl = req ? `${req.protocol}://${req.get("Host")}` : "";
     const res = await fetch(`${baseUrl}/api/jobPosition`);
@@ -11,27 +14,33 @@ export default class extends Component {
   }
 
   jobCards() {
-    return (
-      <div className="centered">
-        <section className="cards">
-          <article className="job-card">
-            <h1>{this.props.positionResult.mynimo.positions[2]}</h1>
-            <h2>Company: {this.props.positionResult.mynimo.companyName[2]}</h2>
+    // return this.props.positionResult.mynimo.jobResult.jobData.map(
+    //   (res, index) => {
+    //     const { Job_Position, Job_Company_Name, Job_Location } = res;
+    //     return (
+    //       <div className="centered" key={index}>
+    //         <section className="cards">
+    //           <article className="job-card">
+    //             <h1 key={index}>{Job_Position}</h1>
+    //             <h2 key={index}>{Job_Company_Name}</h2>
+    //             <h2 key={index}>{Job_Location}</h2>
+    //           </article>
+    //         </section>
+    //       </div>
+    //     );
+    //   }
+    // );
+    return this.props.positionResult.mynimo.jobResult.jobData.map(
+      (res, index) => {
+        const { Job_Position, Job_Company_Name, Job_Location } = res;
+        return (
+          <article className="job-card" key={index}>
+            <h1>{Job_Position}</h1>
+            <h2>{Job_Company_Name}</h2>
+            <h2>{Job_Location}</h2>
           </article>
-          <article className="job-card">
-            <h1>{this.props.positionResult.mynimo.positions[3]}</h1>
-            <h2>Company: {this.props.positionResult.mynimo.companyName[3]}</h2>
-          </article>
-          <article className="job-card">
-            <h1>{this.props.positionResult.mynimo.positions[10]}</h1>
-            <h2>Company: {this.props.positionResult.mynimo.companyName[10]}</h2>
-          </article>
-          <article className="job-card">
-            <h1>{this.props.positionResult.mynimo.positions[15]}</h1>
-            <h2>Company: {this.props.positionResult.mynimo.companyName[15]}</h2>
-          </article>
-        </section>
-      </div>
+        );
+      }
     );
   }
 
@@ -40,7 +49,9 @@ export default class extends Component {
       <div>
         <div>
           <h1>job Section</h1>
-          {this.jobCards()}
+          <div className="centered">
+            <section className="cards">{this.jobCards()}</section>
+          </div>
         </div>
       </div>
     );

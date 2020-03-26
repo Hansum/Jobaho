@@ -2928,33 +2928,49 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement;
 var _default = /*#__PURE__*/function (_Component) {
   Object(_babel_runtime_corejs2_helpers_esm_inherits__WEBPACK_IMPORTED_MODULE_5__["default"])(_default, _Component);
 
-  function _default() {
+  function _default(props) {
     Object(_babel_runtime_corejs2_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_1__["default"])(this, _default);
 
-    return Object(_babel_runtime_corejs2_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_3__["default"])(this, Object(_babel_runtime_corejs2_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_4__["default"])(_default).apply(this, arguments));
+    return Object(_babel_runtime_corejs2_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_3__["default"])(this, Object(_babel_runtime_corejs2_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_4__["default"])(_default).call(this, props));
   }
 
   Object(_babel_runtime_corejs2_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_2__["default"])(_default, [{
     key: "jobCards",
     value: function jobCards() {
-      return __jsx("div", {
-        className: "centered"
-      }, __jsx("section", {
-        className: "cards"
-      }, __jsx("article", {
-        className: "job-card"
-      }, __jsx("h1", null, this.props.positionResult.mynimo.positions[2]), __jsx("h2", null, "Company: ", this.props.positionResult.mynimo.companyName[2])), __jsx("article", {
-        className: "job-card"
-      }, __jsx("h1", null, this.props.positionResult.mynimo.positions[3]), __jsx("h2", null, "Company: ", this.props.positionResult.mynimo.companyName[3])), __jsx("article", {
-        className: "job-card"
-      }, __jsx("h1", null, this.props.positionResult.mynimo.positions[10]), __jsx("h2", null, "Company: ", this.props.positionResult.mynimo.companyName[10])), __jsx("article", {
-        className: "job-card"
-      }, __jsx("h1", null, this.props.positionResult.mynimo.positions[15]), __jsx("h2", null, "Company: ", this.props.positionResult.mynimo.companyName[15]))));
+      // return this.props.positionResult.mynimo.jobResult.jobData.map(
+      //   (res, index) => {
+      //     const { Job_Position, Job_Company_Name, Job_Location } = res;
+      //     return (
+      //       <div className="centered" key={index}>
+      //         <section className="cards">
+      //           <article className="job-card">
+      //             <h1 key={index}>{Job_Position}</h1>
+      //             <h2 key={index}>{Job_Company_Name}</h2>
+      //             <h2 key={index}>{Job_Location}</h2>
+      //           </article>
+      //         </section>
+      //       </div>
+      //     );
+      //   }
+      // );
+      return this.props.positionResult.mynimo.jobResult.jobData.map(function (res, index) {
+        var Job_Position = res.Job_Position,
+            Job_Company_Name = res.Job_Company_Name,
+            Job_Location = res.Job_Location;
+        return __jsx("article", {
+          className: "job-card",
+          key: index
+        }, __jsx("h1", null, Job_Position), __jsx("h2", null, Job_Company_Name), __jsx("h2", null, Job_Location));
+      });
     }
   }, {
     key: "render",
     value: function render() {
-      return __jsx("div", null, __jsx("div", null, __jsx("h1", null, "job Section"), this.jobCards()));
+      return __jsx("div", null, __jsx("div", null, __jsx("h1", null, "job Section"), __jsx("div", {
+        className: "centered"
+      }, __jsx("section", {
+        className: "cards"
+      }, this.jobCards()))));
     }
   }], [{
     key: "getInitialProps",
@@ -3026,7 +3042,7 @@ var _default = /*#__PURE__*/function (_Component) {
 
 /***/ }),
 
-/***/ 4:
+/***/ 3:
 /*!************************************************************************************************************************************!*\
   !*** multi next-client-pages-loader?page=%2Ftesting&absolutePagePath=C%3A%5CUsers%5Cchris%5CDesktop%5Cjobaho%5Cpages%5Ctesting.js ***!
   \************************************************************************************************************************************/
@@ -3049,5 +3065,5 @@ module.exports = dll_82519ec661270f7f484f;
 
 /***/ })
 
-},[[4,"static/runtime/webpack.js"]]]);
+},[[3,"static/runtime/webpack.js"]]]);
 //# sourceMappingURL=testing.js.map
