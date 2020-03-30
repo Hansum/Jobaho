@@ -1,7 +1,14 @@
+const web1 = require("./website1");
+// import { ScrapeData } from "./website1";
 const cheerio = require("cheerio");
 const axios = require("axios");
 
-const webUrl = "https://www.mynimo.com/cebu/it-jobs/no-experience-jobs";
+// const webUrl = "https://www.mynimo.com/cebu/it-jobs/no-experience-jobs";
+// const webUrl2 = "https://www.cebuitjobs.com/";
+const url = [
+  "https://www.mynimo.com/cebu/it-jobs/no-experience-jobs",
+  "https://www.cebuitjobs.com/"
+];
 let jobTitle = "";
 const companyName = [];
 const locations = [];
@@ -12,12 +19,19 @@ const jobResult = {
 };
 
 const fetchData = async () => {
+  const [webUrl, webUrl2] = url;
   const result = await axios.get(webUrl);
   return cheerio.load(result.data);
+  // const result = await axios.all([axios.get(webUrl), axios.get(webUrl2)]).then(
+  //   axios.spread((mynimoRes, cebuItres) => {
+  //     return cheerio.load(mynimoRes.data, cebuItres.data);
+  //   })
+  // );
 };
 
 const getResults = async () => {
   const $ = await fetchData();
+  const val = await web1.ScrapeData();
   jobTitle = $(".browser-wrapper_container").text();
 
   $('div[id="job-browse-card"]')
@@ -38,6 +52,12 @@ const getResults = async () => {
       locations.push($(element).text());
     });
 
+  // $('div[class="card-body"]')
+  //   .find("h5")
+  //   .each(function(index, element) {
+  //     sampleArray.push($(element).text());
+  //   });
+
   // $('div[id="job-browse-card"]')
   // .find("div > div > div > div > .item-style2, item-style")
   // .each(function(index, element) {
@@ -53,17 +73,10 @@ const getResults = async () => {
     });
   }
 
-  // return {
-  //   mynimo: {
-  //     positions,
-  //     companyName,
-  //     locations,
-  //     jobTitle
-  //   }
-  // };
   return {
     mynimo: {
-      jobResult
+      jobResult,
+      val
     }
   };
 };
