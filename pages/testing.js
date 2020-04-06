@@ -14,18 +14,16 @@ export default class extends Component {
   }
 
   jobCards() {
-    return this.props.positionResult.mynimo.jobResult.jobData.map(
-      (res, index) => {
-        const { Job_Position, Job_Company_Name, Job_Location } = res;
-        return (
-          <article className="job-card" key={index}>
-            <h1>{Job_Position}</h1>
-            <h2>{Job_Company_Name}</h2>
-            <h2>{Job_Location}</h2>
-          </article>
-        );
-      }
-    );
+    return this.props.positionResult.mynimoData.map((res, index) => {
+      const { Job_Position, Job_Company_Name, Job_Location } = res;
+      return (
+        <article className="job-card" key={index}>
+          <h1>{Job_Position}</h1>
+          <h2>{Job_Company_Name}</h2>
+          <h2>{Job_Location}</h2>
+        </article>
+      );
+    });
   }
 
   render() {
