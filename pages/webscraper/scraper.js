@@ -1,5 +1,5 @@
-const scrape_data_1 = require("./website1");
-// import { ScrapeData } from "./website1";
+const cebuItApi = require("./website1");
+const indreedAPI = require("./website2");
 const cheerio = require("cheerio");
 const axios = require("axios");
 
@@ -7,10 +7,6 @@ const url = [
   "https://www.mynimo.com/cebu/it-jobs/no-experience-jobs",
   "https://www.cebuitjobs.com/",
 ];
-let jobTitle = "";
-const sampleArray = new Set();
-
-const x = [];
 
 const fetchData = async () => {
   const [webUrl, webUrl2] = url;
@@ -57,21 +53,11 @@ const getResults = async () => {
 };
 
 const sendData = async () => {
-  let name = ["Junior", "Associate"];
-  const temp = [];
-  const temp2 = [];
   const mynimoData = await getResults();
-  const retval = await scrape_data_1.ScrapeData();
-  let i = 0;
-  // for (let item of retval.finalVal) {
-  //   if (item != undefined) {
-  //     // const string = item.replace(/\n/g, "");
-  //     // const string = replace(/\n/g, "");
-  //     temp.push(item);
-  //   }
-  // }
+  const retval = await cebuItApi.ScrapeData();
+  const indreed = await indreedAPI.fetchAPI();
 
-  return { mynimoData, retval };
+  return { mynimoData, retval, indreed };
 };
 
 module.exports = sendData;

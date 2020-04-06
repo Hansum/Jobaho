@@ -8,15 +8,6 @@ const fetchData = async () => {
   return cheerio.load(result.data);
 };
 
-// const checkKeywords = async (text) => {
-//   const keywords = ["Associate", "Entry-level", "Junior", "Jr"];
-//   const exists = keywords.some((res) => text.includes(res));
-
-//   if (exists) {
-//     return text;
-//   }
-// };
-
 const checkKeywords = async () => {
   const arr = await getRemainingData();
   const keywords = [
@@ -40,7 +31,6 @@ const checkKeywords = async () => {
 
         if (exists) {
           arrKeywordsFinal.push(item);
-          // console.log("ARRAY", arrKeywordsFinal);
         }
       }
     }
@@ -84,17 +74,8 @@ async function getRemainingData() {
   const position_title = [];
   const company_name = [];
   const date = [];
-  const location = [];
   const finalArray = [];
-  const wew = [];
-  const keywords = [
-    "Associate",
-    "Entry-level",
-    "Junior",
-    "Jr",
-    "Fresh",
-    "Fresh-Graduate",
-  ];
+
   const url = "https://www.cebuitjobs.com";
   for (let i = 0; i <= 65; i += 13) {
     await axios
@@ -145,11 +126,7 @@ async function getRemainingData() {
 }
 
 exports.ScrapeData = async () => {
-  const $ = await fetchData();
-
   const finalVal = await FinalOutput();
-  const check = await getRemainingData();
-  const ax = [];
 
-  return { check, finalVal };
+  return { finalVal };
 };
