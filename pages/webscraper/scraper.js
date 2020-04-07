@@ -3,19 +3,15 @@ const indreedAPI = require("./website2");
 const cheerio = require("cheerio");
 const axios = require("axios");
 
-const url = [
-  "https://www.mynimo.com/cebu/it-jobs/no-experience-jobs",
-  "https://www.cebuitjobs.com/",
-];
-
 const fetchData = async () => {
-  const [webUrl, webUrl2] = url;
-  const result = await axios.get(webUrl);
+  const url = "https://www.mynimo.com/cebu/it-jobs/no-experience-jobs";
+  const result = await axios.get(url);
   return cheerio.load(result.data);
 };
 
 const getResults = async () => {
   const jobData = [];
+  const url = [];
   const companyName = [];
   const locations = [];
   const positions = [];
@@ -38,14 +34,20 @@ const getResults = async () => {
     .find(".job-browse-card-element > .four > .item-style2")
     .each(function (index, element) {
       locations.push($(element).text());
-    })
-    .end();
+    });
+
+  $('div[id="job-browse-card"]')
+    .find("a")
+    .each(function (index, element) {
+      url.push($(element).attr("href"));
+    });
 
   for (var i = 0; i < positions.length; i++) {
     jobData.push({
       Job_Position: positions[i],
       Job_Company_Name: companyName[i],
       Job_Location: locations[i],
+      Job_url: url[i],
     });
   }
 
@@ -53,11 +55,11 @@ const getResults = async () => {
 };
 
 const sendData = async () => {
-  const mynimoData = await getResults();
-  const retval = await cebuItApi.ScrapeData();
-  const indreed = await indreedAPI.fetchAPI();
+  const entry_level = await getResults();
+  const mid_level = await cebuItApi.ScrapeData();
+  const senior_level = await indreedAPI.fetchAPI();
 
-  return { mynimoData, retval, indreed };
+  return { entry_level, mid_level, senior_level };
 };
 
 module.exports = sendData;

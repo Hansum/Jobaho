@@ -29,15 +29,14 @@ const checkKeywords = async () => {
       ) {
         const exists = keywords.some((res) => item.Job_Position.includes(res));
 
-        if (exists) {
+        if (!exists) {
           arrKeywordsFinal.push(item);
         }
       }
     }
-
     return arrKeywordsFinal;
   } else {
-    console.log("no array found to checkKeywords");
+    console.log("no array found to check Keywords");
   }
 };
 
@@ -55,10 +54,12 @@ const FinalOutput = async () => {
         const jobTitle = item.Job_Position.trim();
         const company = item.Company_Name.trim();
         const date = item.Job_Date.trim();
+
         finalData.push({
           Job_Position: jobTitle,
           Company_Name: company,
           Job_Date: date,
+          Job_Url: item.Job_url,
         });
         return finalData;
       } else {
@@ -74,10 +75,11 @@ async function getRemainingData() {
   const position_title = [];
   const company_name = [];
   const date = [];
+  const job_Url = [];
   const finalArray = [];
 
   const url = "https://www.cebuitjobs.com";
-  for (let i = 0; i <= 65; i += 13) {
+  for (let i = 0; i <= 13; i += 13) {
     await axios
       .get(url + `/more/${i}`)
       .then(function (res) {
@@ -100,6 +102,12 @@ async function getRemainingData() {
           .each(function (index, jobDate) {
             date.push($(jobDate).text());
           });
+
+        $('div[class="card-body"]')
+          .find("h5 a")
+          .each(function (index, element) {
+            job_Url.push($(element).attr("href"));
+          });
       })
       .catch(function (err) {
         console.log("Error fetching", err);
@@ -109,13 +117,15 @@ async function getRemainingData() {
   if (
     position_title.length != 0 ||
     company_name.length != 0 ||
-    date.length != 0
+    date.length != 0 ||
+    job_Url.length != 0
   ) {
     for (let i = 0; i <= position_title.length; i++) {
       finalArray.push({
         Job_Position: position_title[i],
         Company_Name: company_name[i],
         Job_Date: date[i],
+        Job_url: job_Url[i],
       });
     }
   }

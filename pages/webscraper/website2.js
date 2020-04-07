@@ -24,7 +24,3 @@ exports.fetchAPI = async () => {
       console.log("error fetching in indreed API");
     });
 };
-
-// const filterData = async () => {
-//     const retval = await fetchAPI();
-// }
