@@ -18,15 +18,4 @@ router.get("/jobPosition", async function (req, res) {
   }
 });
 
-// router.get('/Jobexperice/:id', async (req, res) => {
-//   const retExperienceData = await getExperienceData(req.param.id);
-
-//   if (retExperienceData) {
-//     return res.json({data: retExperienceData});
-//   } else {
-//     console.log("error fetching data on /Jobexperience")
-//   }
-
-// })
-
 module.exports = router;

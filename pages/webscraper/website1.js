@@ -1,8 +1,6 @@
 const cheerio = require("cheerio");
 const axios = require("axios");
 
-const url = "https://www.cebuitjobs.com";
-
 const fetchData = async () => {
   const result = await axios.get(url);
   return cheerio.load(result.data);
@@ -61,11 +59,12 @@ const FinalOutput = async () => {
           Job_Date: date,
           Job_Url: item.Job_url,
         });
-        return finalData;
       } else {
         console.log("there is an undefined object in the array");
       }
     }
+
+    return finalData;
   } else {
     console.log("no array found to remove space");
   }
@@ -79,7 +78,7 @@ async function getRemainingData() {
   const finalArray = [];
 
   const url = "https://www.cebuitjobs.com";
-  for (let i = 0; i <= 13; i += 13) {
+  for (let i = 0; i !== 143; i += 13) {
     await axios
       .get(url + `/more/${i}`)
       .then(function (res) {
@@ -129,7 +128,7 @@ async function getRemainingData() {
       });
     }
   }
-
+  // console.log("array:", finalArray);
   return axios.all(finalArray).then((res) => {
     return res;
   });

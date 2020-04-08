@@ -14,13 +14,14 @@ export default class extends Component {
   }
 
   jobCards() {
-    return this.props.positionResult.mynimoData.map((res, index) => {
-      const { Job_Position, Job_Company_Name, Job_Location } = res;
+    return this.props.positionResult.entry_level.map((res, index) => {
+      const { Job_Position, Job_Company_Name, Job_Location, Job_url } = res;
       return (
         <article className="job-card" key={index}>
           <h1>{Job_Position}</h1>
           <h2>{Job_Company_Name}</h2>
           <h2>{Job_Location}</h2>
+          <h2>{Job_url}</h2>
         </article>
       );
     });
@@ -39,39 +40,3 @@ export default class extends Component {
     );
   }
 }
-
-// import React, { Component } from "react";
-// import axios from "axios";
-
-// class TestingPage extends Component {
-//   constructor(props) {
-//     super(props);
-//     this.state = {
-//       data: []
-//     };
-//   }
-
-//   fetchData() {
-//     axios
-//       .get("/api/test")
-//       .then(data => data.json())
-//       .then(res => this.setState({ data: res.data }))
-//       .catch(err => console.log("error", err));
-//   }
-
-//   renderData() {
-//     const { data } = this.state;
-//     return <h1>{data}</h1>;
-//   }
-
-//   render() {
-//     return (
-//       <div>
-//         <h1>TEST ONLY</h1>
-//         {this.renderData()}
-//       </div>
-//     );
-//   }
-// }
-
-// export default TestingPage;
