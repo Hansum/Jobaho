@@ -18,6 +18,10 @@
     "/_polyfills": [
       "static/runtime/polyfills.js",
       "static/runtime/polyfills.js.map"
+    ],
+    "/jobSection": [
+      "static/runtime/webpack.js",
+      "static/runtime/main.js"
     ]
   }
 }
