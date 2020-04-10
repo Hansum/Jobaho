@@ -118,15 +118,19 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _assets_css_style_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../assets/css/style.scss */ "./assets/css/style.scss");
 /* harmony import */ var _assets_css_style_scss__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_assets_css_style_scss__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _chakra_ui_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @chakra-ui/core */ "@chakra-ui/core");
+/* harmony import */ var _chakra_ui_core__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_chakra_ui_core__WEBPACK_IMPORTED_MODULE_2__);
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
  // This default export is required in a new `pages/_app.js` file.
 
 function MyApp({
   Component,
   pageProps
 }) {
-  return __jsx(Component, pageProps);
+  // return <Component {...pageProps} />;
+  return __jsx(_chakra_ui_core__WEBPACK_IMPORTED_MODULE_2__["ThemeProvider"], null, __jsx(_chakra_ui_core__WEBPACK_IMPORTED_MODULE_2__["CSSReset"], null), __jsx(Component, pageProps));
 }
 
 /***/ }),
@@ -140,6 +144,17 @@ function MyApp({
 
 module.exports = __webpack_require__(/*! private-next-pages/_app.js */"./pages/_app.js");
 
+
+/***/ }),
+
+/***/ "@chakra-ui/core":
+/*!**********************************!*\
+  !*** external "@chakra-ui/core" ***!
+  \**********************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("@chakra-ui/core");
 
 /***/ }),
 

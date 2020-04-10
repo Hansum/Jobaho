@@ -59,8 +59,6 @@ const FinalOutput = async () => {
           Job_Date: date,
           Job_Url: item.Job_url,
         });
-      } else {
-        console.log("there is an undefined object in the array");
       }
     }
 

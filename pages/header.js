@@ -2,7 +2,7 @@ import Link from "next/link";
 
 const Navbar = () => {
   return (
-    <body>
+    <div>
       <nav>
         <div>
           <Link href="/">
@@ -25,7 +25,7 @@ const Navbar = () => {
           </Link>
         </div>
       </nav>
-    </body>
+    </div>
   );
 };
 
