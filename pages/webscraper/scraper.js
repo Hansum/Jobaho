@@ -47,7 +47,7 @@ const getResults = async () => {
       Job_Position: positions[i],
       Job_Company_Name: companyName[i],
       Job_Location: locations[i],
-      Job_url: url[i],
+      Job_url: "https://mynimo.com" + url[i],
     });
   }
 
@@ -56,10 +56,8 @@ const getResults = async () => {
 
 const sendData = async () => {
   const entry_level = await getResults();
-  const mid_level = await cebuItApi.ScrapeData();
-  const senior_level = await indreedAPI.fetchAPI();
 
-  return { entry_level, mid_level, senior_level };
+  return { entry_level };
 };
 
 module.exports = sendData;

@@ -15,6 +15,8 @@ const checkKeywords = async () => {
     "Jr",
     "Fresh",
     "Fresh-Graduate",
+    "Senior",
+    "Sr",
   ];
   const arrKeywordsFinal = [];
 
@@ -56,6 +58,7 @@ const FinalOutput = async () => {
         finalData.push({
           Job_Position: jobTitle,
           Company_Name: company,
+          Job_Location: item.Job_Location,
           Job_Date: date,
           Job_Url: item.Job_url,
         });
@@ -73,6 +76,7 @@ async function getRemainingData() {
   const company_name = [];
   const date = [];
   const job_Url = [];
+  const location = [];
   const finalArray = [];
 
   const url = "https://www.cebuitjobs.com";
@@ -101,6 +105,12 @@ async function getRemainingData() {
           });
 
         $('div[class="card-body"]')
+          .find("span:first-of-type")
+          .each(function (index, jobLocation) {
+            location.push($(jobLocation).text());
+          });
+
+        $('div[class="card-body"]')
           .find("h5 a")
           .each(function (index, element) {
             job_Url.push($(element).attr("href"));
@@ -121,6 +131,7 @@ async function getRemainingData() {
       finalArray.push({
         Job_Position: position_title[i],
         Company_Name: company_name[i],
+        Job_Location: location[i],
         Job_Date: date[i],
         Job_url: job_Url[i],
       });
@@ -132,8 +143,10 @@ async function getRemainingData() {
   });
 }
 
-exports.ScrapeData = async () => {
-  const finalVal = await FinalOutput();
+const sendScrapeData = async () => {
+  const mid_level = await FinalOutput();
 
-  return { finalVal };
+  return { mid_level };
 };
+
+module.exports = sendScrapeData;

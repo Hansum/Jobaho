@@ -1,9 +1,8 @@
-const JobCardsLayout = ({ title, children }) => (
-  <div>
-    <div className="centered">
-      <h1>{title}</h1>
-      <section className="card">{children}</section>
-    </div>
+import Navbar from "../pages/header";
+const JobCardsLayout = ({ children }) => (
+  <div className="centered">
+    <Navbar />
+    {children}
   </div>
 );
 

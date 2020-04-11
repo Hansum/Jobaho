@@ -1,26 +1,37 @@
 const axios = require("axios");
 
-exports.fetchAPI = async () => {
+const fetchIndreedAPI = async () => {
   const arr = [];
   const api =
-    "https://indreed.herokuapp.com/api/jobs?q=Software%20Developer&l=Cebu&country=ph";
+    "https://indreed.herokuapp.com/api/jobs?q=Software%20Developer&l=Cebu&country=ph&max=30";
   return await axios
     .get(api)
     .then((res) => {
-      //   for (let item of res.data) {
-      //     if (item != undefined) {
-      //       arr.push({
-      //         Job_Position: item.title,
-      //         Job_Url: item.url,
-      //         Company_Name: item.company,
-      //         Location: item.location,
-      //       });
-      //     }
-      //   }
-      //   console.log("array:", arr);
       return res.data;
     })
     .catch((err) => {
       console.log("error fetching in indreed API");
     });
 };
+
+const RemoveKeywords = async () => {
+  const data = await fetchIndreedAPI();
+  const finalarr = [];
+  const keyWords = ["Senior", "Sr"];
+
+  for (let item of data) {
+    const exists = keyWords.some((res) => item.title.includes(res));
+    if (exists) {
+      finalarr.push(item);
+    }
+  }
+  return finalarr;
+};
+
+const sendIndreedData = async () => {
+  const senior_level = await RemoveKeywords();
+  // console.log("senior data:", senior_level);
+  return { senior_level };
+};
+
+module.exports = sendIndreedData;

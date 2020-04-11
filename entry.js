@@ -49,7 +49,7 @@ const combineData = async (req, res) => {
       job_position: fetchData.Job_title[i],
       company: fetchData.Company_name[i],
       location: fetchData.location[i],
-      url: fetchData.Job_url[i],
+      url: "https://mynimo.com" + fetchData.Job_url[i],
     });
   }
 
