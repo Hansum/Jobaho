@@ -1,5 +1,3 @@
-const cebuItApi = require("./website1");
-const indreedAPI = require("./website2");
 const cheerio = require("cheerio");
 const axios = require("axios");
 
@@ -56,8 +54,9 @@ const getResults = async () => {
 
 const sendData = async () => {
   const entry_level = await getResults();
+  const length = entry_level.length;
 
-  return { entry_level };
+  return { entry_level, length };
 };
 
 module.exports = sendData;

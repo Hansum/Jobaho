@@ -17,7 +17,7 @@ const fetchIndreedAPI = async () => {
 const RemoveKeywords = async () => {
   const data = await fetchIndreedAPI();
   const finalarr = [];
-  const keyWords = ["Senior", "Sr", "Manager"];
+  const keyWords = ["Senior", "Sr", "Manager", "Lead"];
 
   for (let item of data) {
     const exists = keyWords.some((res) => item.title.includes(res));
@@ -30,8 +30,9 @@ const RemoveKeywords = async () => {
 
 const sendIndreedData = async () => {
   const senior_level = await RemoveKeywords();
+  const length = senior_level.length;
   // console.log("senior data:", senior_level);
-  return { senior_level };
+  return { senior_level, length };
 };
 
 module.exports = sendIndreedData;

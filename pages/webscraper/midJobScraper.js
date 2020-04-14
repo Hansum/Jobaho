@@ -140,8 +140,9 @@ async function getRemainingData() {
 
 const sendScrapeData = async () => {
   const mid_level = await FinalOutput();
+  const length = mid_level.length;
 
-  return { mid_level };
+  return { mid_level, length };
 };
 
 module.exports = sendScrapeData;
