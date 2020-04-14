@@ -1,6 +1,17 @@
-import { Box, Flex, Link, Text, Button, ButtonGroup } from "@chakra-ui/core";
+import {
+  Box,
+  Flex,
+  Link,
+  Text,
+  Image,
+  Button,
+  ButtonGroup,
+} from "@chakra-ui/core";
 import fetch from "isomorphic-unfetch";
 import JobCardsLayout from "../components/JobsectionCards";
+import juniorImage from "../assets/images/cherry-waiting.svg";
+import midImage from "../assets/images/cherry-uploading.svg";
+import seniorimage from "../assets/images/cherry-welcome.svg";
 
 const JobCardSection = () => (
   <JobCardsLayout>
@@ -25,6 +36,9 @@ const JobCardSection = () => (
         rounded="lg"
         mt={5}
       >
+        <Box size="400px">
+          <Image src={juniorImage} alt="junior svg"></Image>
+        </Box>
         <Box
           color="gray.500"
           fontWeight="bold"
@@ -45,15 +59,13 @@ const JobCardSection = () => (
           Number of Jobs: 17
         </Box>
         <Box
-          mt="10"
+          mt="7"
           fontWeight="semibold"
           fontSize="lg"
           textAlign="center"
           color="blue.800"
         >
-          <Link href="#" isExternal>
-            See More
-          </Link>
+          <Link href="/junior">See More</Link>
         </Box>
       </Box>
       <Box
@@ -65,6 +77,9 @@ const JobCardSection = () => (
         rounded="lg"
         mt={5}
       >
+        <Box size="400px">
+          <Image src={midImage} alt="junior svg"></Image>
+        </Box>
         <Box
           color="gray.500"
           fontWeight="bold"
@@ -85,15 +100,13 @@ const JobCardSection = () => (
           Number of Jobs: 17
         </Box>
         <Box
-          mt="10"
+          mt="7"
           fontWeight="semibold"
           fontSize="lg"
           textAlign="center"
           color="blue.800"
         >
-          <Link href="#" isExternal>
-            See More
-          </Link>
+          <Link href="/mid">See More</Link>
         </Box>
       </Box>
       <Box
@@ -105,6 +118,9 @@ const JobCardSection = () => (
         rounded="lg"
         mt={5}
       >
+        <Box size="400px">
+          <Image src={seniorimage} alt="junior svg"></Image>
+        </Box>
         <Box
           color="gray.500"
           fontWeight="bold"
@@ -125,15 +141,13 @@ const JobCardSection = () => (
           Number of Jobs: 5
         </Box>
         <Box
-          mt="10"
+          mt="7"
           fontWeight="semibold"
           fontSize="lg"
           textAlign="center"
           color="blue.800"
         >
-          <Link href="#" isExternal>
-            See More
-          </Link>
+          <Link href="/senior">See More</Link>
         </Box>
       </Box>
     </Flex>

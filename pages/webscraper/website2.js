@@ -17,7 +17,7 @@ const fetchIndreedAPI = async () => {
 const RemoveKeywords = async () => {
   const data = await fetchIndreedAPI();
   const finalarr = [];
-  const keyWords = ["Senior", "Sr"];
+  const keyWords = ["Senior", "Sr", "Manager"];
 
   for (let item of data) {
     const exists = keyWords.some((res) => item.title.includes(res));

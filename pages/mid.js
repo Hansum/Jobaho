@@ -1,17 +1,14 @@
 import React, { Component } from "react";
 import { useRouter } from "next/router";
-import useSWR from "swr";
 import JobCardsLayout from "../components/JobsectionCards";
 import fetch from "isomorphic-unfetch";
 import ErrorPage from "next/error";
 import { Box, Flex, Link, Text, Button, ButtonGroup } from "@chakra-ui/core";
 
 const jobPage = ({ result }) => {
-  const router = useRouter();
-
   if (!result) {
-    // return <ErrorPage statusCode={404}></ErrorPage>;
-    console.log("Data not found");
+    console.log("Data loading");
+    return <div>Loading...</div>;
   }
 
   return (
