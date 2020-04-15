@@ -1,0 +1,1 @@
+{"ast":null,"code":"import React from \"react\";\nvar __jsx = React.createElement;\nimport Navbar from \"../pages/header\";\n\nconst JobCardsLayout = ({\n  children\n}) => __jsx(\"div\", {\n  className: \"centered\"\n}, __jsx(Navbar, null), children);\n\nexport default JobCardsLayout;","map":null,"metadata":{},"sourceType":"module"}

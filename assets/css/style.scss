@@ -12,11 +12,11 @@ body {
   box-sizing: border-box;
 }
 
-// * {
-//   color: hsla(210, 100%, 100%, 0.9) !important;
-//   background: hsla(210, 100%, 50%, 0.5) !important;
-//   outline: solid 0.25rem hsla(210, 100%, 100%, 0.5) !important;
-// }
+* {
+  color: hsla(210, 100%, 100%, 0.9) !important;
+  background: hsla(210, 100%, 50%, 0.5) !important;
+  outline: solid 0.25rem hsla(210, 100%, 100%, 0.5) !important;
+}
 
 nav {
   list-style-type: none;
@@ -47,6 +47,7 @@ nav div a:not(#navbar1) {
 }
 .row {
   display: flex;
+  flex-wrap: wrap;
 }
 
 .column {
@@ -87,64 +88,36 @@ h1 {
 }
 
 img {
-  max-width: 70%;
-  max-height: 100%;
-  margin-top: 150px;
+  max-width: 20%;
+  max-height: 70%;
   margin-left: auto;
   margin-right: auto;
   display: block;
 }
 
-.column-left > a {
-  color: white;
-  text-decoration: none;
-  background-color: #0f31aa;
-  cursor: pointer;
-  padding: 30px;
-  font-family: "Sen", sans-serif;
-  text-decoration: none;
-}
+// .cards {
+//   display: flex;
+//   flex-wrap: wrap;
+//   justify-content: space-between;
+// }
 
-h1 {
-  color: white;
-  text-align: center;
-  font-family: "Sen", sans-serif;
-  margin-top: 25px;
-  font-size: 40px;
-}
+// .job-card {
+//   flex: 1 0 500px;
+//   background-color: white;
+//   border-radius: 2%;
+//   margin: 1rem 1rem;
+// }
 
-img {
-  max-width: 70%;
-  max-height: 100%;
-  margin-top: 150px;
-  margin-left: auto;
-  margin-right: auto;
-  display: block;
-}
+// .job-card > h1 {
+//   color: #000;
+//   text-align: center;
+//   font-family: "Inter", sans-serif;
+//   font-size: 20px;
+//   padding: 10px;
+// }
 
-.cards {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-}
-
-.job-card {
-  flex: 1 0 500px;
-  background-color: white;
-  border-radius: 2%;
-  margin: 1rem 1rem;
-}
-
-.job-card > h1 {
-  color: #000;
-  text-align: center;
-  font-family: "Inter", sans-serif;
-  font-size: 20px;
-  padding: 10px;
-}
-
-.job-card > h2 {
-  font-family: "Sen", sans-serif;
-  font-size: 15px;
-  text-align: center;
-}
+// .job-card > h2 {
+//   font-family: "Sen", sans-serif;
+//   font-size: 15px;
+//   text-align: center;
+// }

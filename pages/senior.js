@@ -1,13 +1,28 @@
-import React, { Component } from "react";
-import fetch from "isomorphic-unfetch";
+import React from "react";
+import useSWR from "swr";
 import JobCardsLayout from "../components/JobsectionCards";
+import fetch from "isomorphic-unfetch";
+
 import { Box, Flex, Link, Text, Button, ButtonGroup } from "@chakra-ui/core";
 
-const SeniorPage = ({ result }) => {
-  if (!result) {
-    console.log("No data from the senior result");
-  }
+const fetcher = async (url) => {
+  const res = await fetch(url);
+  const data = await res.json();
 
+  if (res.status !== 200) {
+    throw new Error("error", data.message);
+  }
+  return data;
+};
+
+export default function FetchData() {
+  const { data, error } = useSWR("/api/seniorAPI", fetcher);
+  // console.log("Data:", data);
+
+  if (error) return <div>Failed to load entry level api</div>;
+  if (!data) return <div>Loading...</div>;
+
+  //BOX ----> DIV
   return (
     <JobCardsLayout>
       <Box>
@@ -21,7 +36,7 @@ const SeniorPage = ({ result }) => {
           Senior Level Jobs
         </Text>
         <Flex flexWrap="wrap" justifyContent="center">
-          {result.data.senior_level.map((res, index) => {
+          {data.map((res, index) => {
             const { title, company, location, url } = res;
             return (
               <Box
@@ -67,23 +82,4 @@ const SeniorPage = ({ result }) => {
       </Box>
     </JobCardsLayout>
   );
-};
-
-export async function getServerSideProps({ req }) {
-  try {
-    const baseUrl = req ? `${req.protocol}://${req.get("Host")}` : "";
-    const res = await fetch(`${baseUrl}/api/SeniorPosition`);
-    const result = await res.json();
-
-    return {
-      props: { result },
-    };
-  } catch {
-    res.statusCode = 404;
-    return {
-      props: {},
-    };
-  }
 }
-
-export default SeniorPage;

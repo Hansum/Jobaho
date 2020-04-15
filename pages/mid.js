@@ -1,16 +1,27 @@
-import React, { Component } from "react";
-import { useRouter } from "next/router";
+import useSWR from "swr";
 import JobCardsLayout from "../components/JobsectionCards";
 import fetch from "isomorphic-unfetch";
-import ErrorPage from "next/error";
+
 import { Box, Flex, Link, Text, Button, ButtonGroup } from "@chakra-ui/core";
 
-const jobPage = ({ result }) => {
-  if (!result) {
-    console.log("Data loading");
-    return <div>Loading...</div>;
-  }
+const fetcher = async (url) => {
+  const res = await fetch(url);
+  const data = await res.json();
 
+  if (res.status !== 200) {
+    throw new Error("error", data.message);
+  }
+  return data;
+};
+
+export default function FetchData() {
+  const { data, error } = useSWR("/api/midAPI", fetcher);
+  // console.log("Data:", data);
+
+  if (error) return <div>Failed to load entry level api</div>;
+  if (!data) return <div>Loading...</div>;
+
+  //BOX ----> DIV
   return (
     <JobCardsLayout>
       <Box>
@@ -24,7 +35,7 @@ const jobPage = ({ result }) => {
           Mid Level Jobs
         </Text>
         <Flex flexWrap="wrap" justifyContent="center">
-          {result.data.mid_level.map((res, index) => {
+          {data.mid_level.map((res, index) => {
             const {
               Job_Position,
               Company_Name,
@@ -76,23 +87,4 @@ const jobPage = ({ result }) => {
       </Box>
     </JobCardsLayout>
   );
-};
-
-export async function getServerSideProps({ req }) {
-  try {
-    const baseUrl = req ? `${req.protocol}://${req.get("Host")}` : "";
-    const res = await fetch(`${baseUrl}/api/MidPosition`);
-    const result = await res.json();
-
-    return {
-      props: { result },
-    };
-  } catch {
-    res.statusCode = 404;
-    return {
-      props: {},
-    };
-  }
 }
-
-export default jobPage;

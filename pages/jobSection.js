@@ -7,7 +7,6 @@ import {
   Button,
   ButtonGroup,
 } from "@chakra-ui/core";
-import fetch from "isomorphic-unfetch";
 import JobCardsLayout from "../components/JobsectionCards";
 import juniorImage from "../assets/images/cherry-waiting.svg";
 import midImage from "../assets/images/cherry-uploading.svg";

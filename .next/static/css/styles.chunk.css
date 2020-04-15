@@ -9,6 +9,11 @@ body {
   background-color: #171717;
   box-sizing: border-box; }
 
+* {
+  color: rgba(255, 255, 255, 0.9) !important;
+  background: rgba(0, 128, 255, 0.5) !important;
+  outline: solid 0.25rem rgba(255, 255, 255, 0.5) !important; }
+
 nav {
   list-style-type: none;
   margin: 20px 50px 0px 50px;
@@ -34,7 +39,8 @@ nav div a:not(#navbar1) {
   float: left; }
 
 .row {
-  display: flex; }
+  display: flex;
+  flex-wrap: wrap; }
 
 .column {
   width: 50%;
@@ -70,59 +76,11 @@ h1 {
   font-size: 40px; }
 
 img {
-  max-width: 70%;
-  max-height: 100%;
-  margin-top: 150px;
+  max-width: 20%;
+  max-height: 70%;
   margin-left: auto;
   margin-right: auto;
   display: block; }
-
-.column-left > a {
-  color: white;
-  text-decoration: none;
-  background-color: #0f31aa;
-  cursor: pointer;
-  padding: 30px;
-  font-family: "Sen", sans-serif;
-  text-decoration: none; }
-
-h1 {
-  color: white;
-  text-align: center;
-  font-family: "Sen", sans-serif;
-  margin-top: 25px;
-  font-size: 40px; }
-
-img {
-  max-width: 70%;
-  max-height: 100%;
-  margin-top: 150px;
-  margin-left: auto;
-  margin-right: auto;
-  display: block; }
-
-.cards {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between; }
-
-.job-card {
-  flex: 1 0 500px;
-  background-color: white;
-  border-radius: 2%;
-  margin: 1rem 1rem; }
-
-.job-card > h1 {
-  color: #000;
-  text-align: center;
-  font-family: "Inter", sans-serif;
-  font-size: 20px;
-  padding: 10px; }
-
-.job-card > h2 {
-  font-family: "Sen", sans-serif;
-  font-size: 15px;
-  text-align: center; }
 
 
 /*# sourceMappingURL=styles.chunk.css.map*/

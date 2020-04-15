@@ -1,0 +1,1 @@
+{"ast":null,"code":"import combineData from \"../../../entry\";\nexport default (async (req, res) => {\n  const retval = await combineData();\n  res.status(200).json(retval);\n});","map":null,"metadata":{},"sourceType":"module"}

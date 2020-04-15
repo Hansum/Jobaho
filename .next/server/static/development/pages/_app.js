@@ -120,8 +120,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _assets_css_style_scss__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_assets_css_style_scss__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _chakra_ui_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @chakra-ui/core */ "@chakra-ui/core");
 /* harmony import */ var _chakra_ui_core__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_chakra_ui_core__WEBPACK_IMPORTED_MODULE_2__);
+var _jsxFileName = "C:\\Users\\chris\\Desktop\\Jobaho\\pages\\_app.js";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
+function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
+
 
  // This default export is required in a new `pages/_app.js` file.
 
@@ -130,7 +134,28 @@ function MyApp({
   pageProps
 }) {
   // return <Component {...pageProps} />;
-  return __jsx(_chakra_ui_core__WEBPACK_IMPORTED_MODULE_2__["ThemeProvider"], null, __jsx(_chakra_ui_core__WEBPACK_IMPORTED_MODULE_2__["CSSReset"], null), __jsx(Component, pageProps));
+  return __jsx(_chakra_ui_core__WEBPACK_IMPORTED_MODULE_2__["ThemeProvider"], {
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 8,
+      columnNumber: 5
+    }
+  }, __jsx(_chakra_ui_core__WEBPACK_IMPORTED_MODULE_2__["CSSReset"], {
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 9,
+      columnNumber: 7
+    }
+  }), __jsx(Component, _extends({}, pageProps, {
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 10,
+      columnNumber: 7
+    }
+  })));
 }
 
 /***/ }),
