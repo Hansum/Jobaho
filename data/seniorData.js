@@ -48,13 +48,13 @@ const indeed = require("indeed-scraper");
 const fetchIndeedData = async () => {
   const queryOptions = {
     host: "www.indeed.com.ph",
-    query: "Software Developer",
+    query: "Software",
     city: "Cebu",
     radius: "30",
     level: "senior_level",
     jobType: "fulltime",
     maxAge: "30",
-    sort: "relevance",
+    sort: "date",
     limit: 100,
   };
 

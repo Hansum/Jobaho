@@ -35,7 +35,7 @@ const JobCardSection = () => (
         rounded="lg"
         mt={5}
       >
-        <Box size="400px">
+        <Box size="400px" pt={3}>
           <Image src={juniorImage} alt="junior svg"></Image>
         </Box>
         <Box
@@ -48,7 +48,7 @@ const JobCardSection = () => (
         >
           Entry-level Jobs
         </Box>
-        <Box
+        {/* <Box
           mt="2"
           fontWeight="semibold"
           fontSize="md"
@@ -56,7 +56,7 @@ const JobCardSection = () => (
           color="blue.600"
         >
           Number of Jobs: 17
-        </Box>
+        </Box> */}
         <Box
           mt="7"
           fontWeight="semibold"
@@ -76,7 +76,7 @@ const JobCardSection = () => (
         rounded="lg"
         mt={5}
       >
-        <Box size="400px">
+        <Box size="400px" pt={3}>
           <Image src={midImage} alt="junior svg"></Image>
         </Box>
         <Box
@@ -89,15 +89,7 @@ const JobCardSection = () => (
         >
           Mid-level Jobs
         </Box>
-        <Box
-          mt="2"
-          fontWeight="semibold"
-          fontSize="md"
-          textAlign="center"
-          color="blue.600"
-        >
-          Number of Jobs: 17
-        </Box>
+
         <Box
           mt="7"
           fontWeight="semibold"
@@ -117,7 +109,7 @@ const JobCardSection = () => (
         rounded="lg"
         mt={5}
       >
-        <Box size="400px">
+        <Box size="400px" pt={3}>
           <Image src={seniorimage} alt="junior svg"></Image>
         </Box>
         <Box
@@ -129,15 +121,6 @@ const JobCardSection = () => (
           textAlign="center"
         >
           Senior-level Jobs
-        </Box>
-        <Box
-          mt="2"
-          fontWeight="semibold"
-          fontSize="md"
-          textAlign="center"
-          color="blue.600"
-        >
-          Number of Jobs: 5
         </Box>
         <Box
           mt="7"

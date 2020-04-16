@@ -1,5 +1,6 @@
 import useSWR from "swr";
 import JobCardsLayout from "../components/JobsectionCards";
+import Loader from "../components/LoadingLayout";
 import fetch from "isomorphic-unfetch";
 
 import { Box, Flex, Link, Text, Button, ButtonGroup } from "@chakra-ui/core";
@@ -18,8 +19,14 @@ export default function FetchData() {
   const { data, error } = useSWR("/api/midAPI", fetcher);
   // console.log("Data:", data);
 
-  if (error) return <div>Failed to load entry level api</div>;
-  if (!data) return <div>Loading...</div>;
+  if (error) return <div>Failed to load mid api</div>;
+  if (!data) {
+    return (
+      <Loader>
+        <Text>Scraping Mid Level Jobs </Text>
+      </Loader>
+    );
+  }
 
   //BOX ----> DIV
   return (
@@ -33,6 +40,15 @@ export default function FetchData() {
           fontFamily="Sen"
         >
           Mid Level Jobs
+        </Text>
+        <Text
+          color="white"
+          m={5}
+          textAlign="center"
+          fontSize="20px"
+          fontFamily="Sen"
+        >
+          Number of Jobs: {data.length}
         </Text>
         <Flex flexWrap="wrap" justifyContent="center">
           {data.mid_level.map((res, index) => {

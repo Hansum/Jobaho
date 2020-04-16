@@ -9,78 +9,72 @@ body {
   background-color: #171717;
   box-sizing: border-box; }
 
-* {
-  color: rgba(255, 255, 255, 0.9) !important;
-  background: rgba(0, 128, 255, 0.5) !important;
-  outline: solid 0.25rem rgba(255, 255, 255, 0.5) !important; }
+.topnav {
+  overflow: hidden;
+  margin: 20px; }
 
-nav {
-  list-style-type: none;
-  margin: 20px 50px 0px 50px;
-  padding: 0;
-  overflow: hidden; }
-
-nav div a {
-  display: flex;
+.topnav a {
+  margin: 20px;
+  float: left;
+  display: block;
+  color: #f2f2f2;
   text-align: center;
+  padding: 14px 16px;
   text-decoration: none;
   font-size: 20px;
-  font-family: "Inter", sans-serif;
-  margin-top: 15px;
-  margin-bottom: 15px;
-  color: white; }
+  font-family: "Inter", sans-serif; }
 
-nav div a:not(#navbar1) {
-  float: right;
-  padding-left: 20px;
-  padding-right: 20px; }
+.topnav a:not(:first-child) {
+  float: right; }
 
-#navbar1 {
-  float: left; }
+.topnav .icon {
+  display: none; }
 
-.row {
-  display: flex;
-  flex-wrap: wrap; }
+.chakra-menu {
+  display: none; }
 
-.column {
-  width: 50%;
-  position: relative; }
-
-.column-left {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center; }
-
-.column-left > p {
+.column-left p {
   color: white;
   font-size: 70px;
   font-family: "Sen", sans-serif;
-  padding-bottom: 40px; }
+  text-align: center;
+  margin: 50px;
+  padding: 5px; }
 
-.column-left > a {
+.column-left-button {
+  margin: 50px;
+  text-align: center; }
+
+.column-left-button a {
+  position: relative;
   color: white;
   text-decoration: none;
   background-color: #0f31aa;
-  cursor: pointer;
-  padding: 30px;
-  font-family: "Sen", sans-serif;
-  text-decoration: none; }
+  padding: 30px; }
 
-h1 {
-  color: white;
-  text-align: center;
-  font-family: "Sen", sans-serif;
-  margin-top: 25px;
-  font-size: 40px; }
+.card_image {
+  width: 32%; }
 
 img {
-  max-width: 20%;
-  max-height: 70%;
+  max-height: 80%;
   margin-left: auto;
-  margin-right: auto;
-  display: block; }
+  margin-right: auto; }
+
+.menu {
+  display: none; }
+
+.dropdown-content {
+  display: none; }
+
+@media only screen and (max-width: 600px) {
+  .card_image {
+    width: 100%; }
+  .topnav a:not(:first-child) {
+    display: none; }
+  .chakra-menu {
+    margin: 27px;
+    display: block;
+    float: right; } }
 
 
 /*# sourceMappingURL=styles.chunk.css.map*/

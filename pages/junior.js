@@ -1,8 +1,9 @@
 import useSWR from "swr";
 import JobCardsLayout from "../components/JobsectionCards";
 import fetch from "isomorphic-unfetch";
-
-import { Box, Flex, Link, Text, Button, ButtonGroup } from "@chakra-ui/core";
+import NextLink from "next/link";
+import Loader from "../components/LoadingLayout";
+import { Box, Flex, Text, Button, ButtonGroup, Link } from "@chakra-ui/core";
 
 const fetcher = async (url) => {
   const res = await fetch(url);
@@ -16,23 +17,39 @@ const fetcher = async (url) => {
 
 export default function FetchData() {
   const { data, error } = useSWR("/api/juniorAPI", fetcher);
-  // console.log("Data:", data);
 
   if (error) return <div>Failed to load entry level api</div>;
-  if (!data) return <div>Loading...</div>;
+  if (!data) {
+    return (
+      <Loader>
+        <Text>Scraping Junior Level Jobs </Text>
+      </Loader>
+    );
+  }
 
   //BOX ----> DIV
   return (
     <JobCardsLayout>
       <Box>
+        <Box p={3} textAlign="center">
+          <Text
+            color="white"
+            textAlign="center"
+            fontSize="40px"
+            fontFamily="Sen"
+          >
+            Junior / Entry Level Jobs
+          </Text>
+        </Box>
+
         <Text
           color="white"
           m={5}
           textAlign="center"
-          fontSize="30px"
+          fontSize="20px"
           fontFamily="Sen"
         >
-          Junior / Entry Level Jobs
+          Number of Jobs: {data.length}
         </Text>
         <Flex flexWrap="wrap" justifyContent="center">
           {data.entry_level.map((res, index) => {

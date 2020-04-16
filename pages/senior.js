@@ -1,6 +1,7 @@
 import React from "react";
 import useSWR from "swr";
 import JobCardsLayout from "../components/JobsectionCards";
+import Loader from "../components/LoadingLayout";
 import fetch from "isomorphic-unfetch";
 
 import { Box, Flex, Link, Text, Button, ButtonGroup } from "@chakra-ui/core";
@@ -20,7 +21,13 @@ export default function FetchData() {
   // console.log("Data:", data);
 
   if (error) return <div>Failed to load entry level api</div>;
-  if (!data) return <div>Loading...</div>;
+  if (!data) {
+    return (
+      <Loader>
+        <Text>Scraping Senior Level Jobs </Text>
+      </Loader>
+    );
+  }
 
   //BOX ----> DIV
   return (
@@ -34,6 +41,15 @@ export default function FetchData() {
           fontFamily="Sen"
         >
           Senior Level Jobs
+        </Text>
+        <Text
+          color="white"
+          m={5}
+          textAlign="center"
+          fontSize="20px"
+          fontFamily="Sen"
+        >
+          Number of Jobs: {data.length}
         </Text>
         <Flex flexWrap="wrap" justifyContent="center">
           {data.map((res, index) => {
