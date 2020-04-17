@@ -142,11 +142,10 @@ function FetchData() {
       columnNumber: 9
     }
   }, data.mid_level.map(function (res, index) {
-    var Job_Position = res.Job_Position,
-        Company_Name = res.Company_Name,
-        Job_Location = res.Job_Location,
-        Job_Date = res.Job_Date,
-        Job_Url = res.Job_Url;
+    var title = res.title,
+        company = res.company,
+        location = res.location,
+        url = res.url;
     return __jsx(_chakra_ui_core__WEBPACK_IMPORTED_MODULE_6__["Box"], {
       m: 3,
       borderWidth: "1px",
@@ -159,14 +158,14 @@ function FetchData() {
       __self: _this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 59,
+        lineNumber: 53,
         columnNumber: 15
       }
     }, __jsx(_chakra_ui_core__WEBPACK_IMPORTED_MODULE_6__["Box"], {
       __self: _this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 69,
+        lineNumber: 63,
         columnNumber: 17
       }
     }, __jsx(_chakra_ui_core__WEBPACK_IMPORTED_MODULE_6__["Box"], {
@@ -179,10 +178,10 @@ function FetchData() {
       __self: _this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 70,
+        lineNumber: 64,
         columnNumber: 19
       }
-    }, Company_Name)), __jsx(_chakra_ui_core__WEBPACK_IMPORTED_MODULE_6__["Box"], {
+    }, company)), __jsx(_chakra_ui_core__WEBPACK_IMPORTED_MODULE_6__["Box"], {
       mt: "2",
       fontWeight: "semibold",
       fontSize: "lg",
@@ -191,19 +190,19 @@ function FetchData() {
       __self: _this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 81,
+        lineNumber: 75,
         columnNumber: 17
       }
     }, __jsx(_chakra_ui_core__WEBPACK_IMPORTED_MODULE_6__["Link"], {
-      href: Job_Url,
+      href: url,
       isExternal: true,
       __self: _this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 88,
+        lineNumber: 82,
         columnNumber: 19
       }
-    }, Job_Position)), __jsx(_chakra_ui_core__WEBPACK_IMPORTED_MODULE_6__["Box"], {
+    }, title)), __jsx(_chakra_ui_core__WEBPACK_IMPORTED_MODULE_6__["Box"], {
       mt: "2",
       color: "gray.600",
       fontSize: "sm",
@@ -211,14 +210,14 @@ function FetchData() {
       __self: _this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 92,
+        lineNumber: 86,
         columnNumber: 17
       }
-    }, Job_Location));
+    }, location));
   }))));
 }
 
 /***/ })
 
 })
-//# sourceMappingURL=mid.js.1d1e036b979ec013ecbf.hot-update.js.map
+//# sourceMappingURL=mid.js.430b1e863f0c212e93d0.hot-update.js.map

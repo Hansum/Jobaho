@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 3);
+/******/ 	return __webpack_require__(__webpack_require__.s = 4);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -2134,11 +2134,10 @@ function FetchData() {
     }
   }, data.mid_level.map((res, index) => {
     const {
-      Job_Position,
-      Company_Name,
-      Job_Location,
-      Job_Date,
-      Job_Url
+      title,
+      company,
+      location,
+      url
     } = res;
     return __jsx(_chakra_ui_core__WEBPACK_IMPORTED_MODULE_5__["Box"], {
       m: 3,
@@ -2152,14 +2151,14 @@ function FetchData() {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 59,
+        lineNumber: 53,
         columnNumber: 15
       }
     }, __jsx(_chakra_ui_core__WEBPACK_IMPORTED_MODULE_5__["Box"], {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 69,
+        lineNumber: 63,
         columnNumber: 17
       }
     }, __jsx(_chakra_ui_core__WEBPACK_IMPORTED_MODULE_5__["Box"], {
@@ -2172,10 +2171,10 @@ function FetchData() {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 70,
+        lineNumber: 64,
         columnNumber: 19
       }
-    }, Company_Name)), __jsx(_chakra_ui_core__WEBPACK_IMPORTED_MODULE_5__["Box"], {
+    }, company)), __jsx(_chakra_ui_core__WEBPACK_IMPORTED_MODULE_5__["Box"], {
       mt: "2",
       fontWeight: "semibold",
       fontSize: "lg",
@@ -2184,19 +2183,19 @@ function FetchData() {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 81,
+        lineNumber: 75,
         columnNumber: 17
       }
     }, __jsx(_chakra_ui_core__WEBPACK_IMPORTED_MODULE_5__["Link"], {
-      href: Job_Url,
+      href: url,
       isExternal: true,
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 88,
+        lineNumber: 82,
         columnNumber: 19
       }
-    }, Job_Position)), __jsx(_chakra_ui_core__WEBPACK_IMPORTED_MODULE_5__["Box"], {
+    }, title)), __jsx(_chakra_ui_core__WEBPACK_IMPORTED_MODULE_5__["Box"], {
       mt: "2",
       color: "gray.600",
       fontSize: "sm",
@@ -2204,16 +2203,16 @@ function FetchData() {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 92,
+        lineNumber: 86,
         columnNumber: 17
       }
-    }, Job_Location));
+    }, location));
   }))));
 }
 
 /***/ }),
 
-/***/ 3:
+/***/ 4:
 /*!****************************!*\
   !*** multi ./pages/mid.js ***!
   \****************************/

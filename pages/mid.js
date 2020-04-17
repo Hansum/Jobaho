@@ -48,13 +48,7 @@ export default function FetchData() {
         </Text>
         <Flex flexWrap="wrap" justifyContent="center">
           {data.mid_level.map((res, index) => {
-            const {
-              Job_Position,
-              Company_Name,
-              Job_Location,
-              Job_Date,
-              Job_Url,
-            } = res;
+            const { title, company, location, url } = res;
             return (
               <Box
                 m={3}
@@ -75,7 +69,7 @@ export default function FetchData() {
                     fontSize="xs"
                     textAlign="center"
                   >
-                    {Company_Name}
+                    {company}
                   </Box>
                 </Box>
                 <Box
@@ -85,12 +79,12 @@ export default function FetchData() {
                   textAlign="center"
                   color="blue.600"
                 >
-                  <Link href={Job_Url} isExternal>
-                    {Job_Position}
+                  <Link href={url} isExternal>
+                    {title}
                   </Link>
                 </Box>
                 <Box mt="2" color="gray.600" fontSize="sm" textAlign="center">
-                  {Job_Location}
+                  {location}
                 </Box>
               </Box>
             );
