@@ -138,11 +138,11 @@ async function getRemainingData() {
   });
 }
 
-const midJobData = async () => {
+const MidJobData = async () => {
   const mid_level = await FinalOutput();
   const length = mid_level.length;
 
   return { mid_level, length };
 };
 
-module.exports = midJobData;
+module.exports = MidJobData;

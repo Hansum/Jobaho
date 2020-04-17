@@ -21,11 +21,7 @@ export default function FetchData() {
 
   if (error) return <div>Failed to load mid api</div>;
   if (!data) {
-    return (
-      <Loader>
-        <Text>Scraping Mid Level Jobs </Text>
-      </Loader>
-    );
+    return <Loader>Scraping Mid Level Jobs</Loader>;
   }
 
   //BOX ----> DIV

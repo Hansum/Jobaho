@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 6);
+/******/ 	return __webpack_require__(__webpack_require__.s = 3);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -2018,10 +2018,10 @@ const Navbar = () => {
 
 /***/ }),
 
-/***/ "./pages/junior.js":
-/*!*************************!*\
-  !*** ./pages/junior.js ***!
-  \*************************/
+/***/ "./pages/mid.js":
+/*!**********************!*\
+  !*** ./pages/mid.js ***!
+  \**********************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -2033,14 +2033,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var swr__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! swr */ "swr");
 /* harmony import */ var swr__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(swr__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _components_JobsectionCards__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/JobsectionCards */ "./components/JobsectionCards.js");
-/* harmony import */ var isomorphic_unfetch__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! isomorphic-unfetch */ "isomorphic-unfetch");
-/* harmony import */ var isomorphic_unfetch__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(isomorphic_unfetch__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! next/link */ "./node_modules/next/link.js");
-/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_4__);
-/* harmony import */ var _components_LoadingLayout__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../components/LoadingLayout */ "./components/LoadingLayout.js");
-/* harmony import */ var _chakra_ui_core__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @chakra-ui/core */ "@chakra-ui/core");
-/* harmony import */ var _chakra_ui_core__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_chakra_ui_core__WEBPACK_IMPORTED_MODULE_6__);
-var _jsxFileName = "C:\\Users\\chris\\Desktop\\Jobaho\\pages\\junior.js";
+/* harmony import */ var _components_LoadingLayout__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components/LoadingLayout */ "./components/LoadingLayout.js");
+/* harmony import */ var isomorphic_unfetch__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! isomorphic-unfetch */ "isomorphic-unfetch");
+/* harmony import */ var isomorphic_unfetch__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(isomorphic_unfetch__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _chakra_ui_core__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @chakra-ui/core */ "@chakra-ui/core");
+/* harmony import */ var _chakra_ui_core__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_chakra_ui_core__WEBPACK_IMPORTED_MODULE_5__);
+var _jsxFileName = "C:\\Users\\chris\\Desktop\\Jobaho\\pages\\mid.js";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
@@ -2049,9 +2047,8 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
 
-
 const fetcher = async url => {
-  const res = await isomorphic_unfetch__WEBPACK_IMPORTED_MODULE_3___default()(url);
+  const res = await isomorphic_unfetch__WEBPACK_IMPORTED_MODULE_4___default()(url);
   const data = await res.json();
 
   if (res.status !== 200) {
@@ -2065,32 +2062,26 @@ function FetchData() {
   const {
     data,
     error
-  } = swr__WEBPACK_IMPORTED_MODULE_1___default()("/api/juniorAPI", fetcher);
+  } = swr__WEBPACK_IMPORTED_MODULE_1___default()("/api/midAPI", fetcher); // console.log("Data:", data);
+
   if (error) return __jsx("div", {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 21,
+      lineNumber: 22,
       columnNumber: 21
     }
-  }, "Failed to load entry level api");
+  }, "Failed to load mid api");
 
   if (!data) {
-    return __jsx(_components_LoadingLayout__WEBPACK_IMPORTED_MODULE_5__["default"], {
+    return __jsx(_components_LoadingLayout__WEBPACK_IMPORTED_MODULE_3__["default"], {
       __self: this,
       __source: {
         fileName: _jsxFileName,
         lineNumber: 24,
-        columnNumber: 7
+        columnNumber: 12
       }
-    }, __jsx(_chakra_ui_core__WEBPACK_IMPORTED_MODULE_6__["Text"], {
-      __self: this,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 25,
-        columnNumber: 9
-      }
-    }, "Scraping Junior Level Jobs "));
+    }, "Scraping Mid Level Jobs");
   } //BOX ----> DIV
 
 
@@ -2098,37 +2089,29 @@ function FetchData() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 32,
+      lineNumber: 29,
       columnNumber: 5
     }
-  }, __jsx(_chakra_ui_core__WEBPACK_IMPORTED_MODULE_6__["Box"], {
+  }, __jsx(_chakra_ui_core__WEBPACK_IMPORTED_MODULE_5__["Box"], {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 33,
+      lineNumber: 30,
       columnNumber: 7
     }
-  }, __jsx(_chakra_ui_core__WEBPACK_IMPORTED_MODULE_6__["Box"], {
-    p: 3,
-    textAlign: "center",
-    __self: this,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 34,
-      columnNumber: 9
-    }
-  }, __jsx(_chakra_ui_core__WEBPACK_IMPORTED_MODULE_6__["Text"], {
+  }, __jsx(_chakra_ui_core__WEBPACK_IMPORTED_MODULE_5__["Text"], {
     color: "white",
+    m: 5,
     textAlign: "center",
-    fontSize: "40px",
+    fontSize: "30px",
     fontFamily: "Sen",
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 35,
-      columnNumber: 11
+      lineNumber: 31,
+      columnNumber: 9
     }
-  }, "Junior / Entry Level Jobs")), __jsx(_chakra_ui_core__WEBPACK_IMPORTED_MODULE_6__["Text"], {
+  }, "Mid Level Jobs"), __jsx(_chakra_ui_core__WEBPACK_IMPORTED_MODULE_5__["Text"], {
     color: "white",
     m: 5,
     textAlign: "center",
@@ -2137,26 +2120,27 @@ function FetchData() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 45,
+      lineNumber: 40,
       columnNumber: 9
     }
-  }, "Number of Jobs: ", data.length), __jsx(_chakra_ui_core__WEBPACK_IMPORTED_MODULE_6__["Flex"], {
+  }, "Number of Jobs: ", data.length), __jsx(_chakra_ui_core__WEBPACK_IMPORTED_MODULE_5__["Flex"], {
     flexWrap: "wrap",
     justifyContent: "center",
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 54,
+      lineNumber: 49,
       columnNumber: 9
     }
-  }, data.entry_level.map((res, index) => {
+  }, data.mid_level.map((res, index) => {
     const {
       Job_Position,
-      Job_Company_Name,
+      Company_Name,
       Job_Location,
-      Job_url
+      Job_Date,
+      Job_Url
     } = res;
-    return __jsx(_chakra_ui_core__WEBPACK_IMPORTED_MODULE_6__["Box"], {
+    return __jsx(_chakra_ui_core__WEBPACK_IMPORTED_MODULE_5__["Box"], {
       m: 3,
       borderWidth: "1px",
       bg: "white",
@@ -2168,17 +2152,17 @@ function FetchData() {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 63,
+        lineNumber: 59,
         columnNumber: 15
       }
-    }, __jsx(_chakra_ui_core__WEBPACK_IMPORTED_MODULE_6__["Box"], {
+    }, __jsx(_chakra_ui_core__WEBPACK_IMPORTED_MODULE_5__["Box"], {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 73,
+        lineNumber: 69,
         columnNumber: 17
       }
-    }, __jsx(_chakra_ui_core__WEBPACK_IMPORTED_MODULE_6__["Box"], {
+    }, __jsx(_chakra_ui_core__WEBPACK_IMPORTED_MODULE_5__["Box"], {
       color: "gray.500",
       fontWeight: "semibold",
       letterSpacing: "wide",
@@ -2188,10 +2172,10 @@ function FetchData() {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 74,
+        lineNumber: 70,
         columnNumber: 19
       }
-    }, Job_Company_Name)), __jsx(_chakra_ui_core__WEBPACK_IMPORTED_MODULE_6__["Box"], {
+    }, Company_Name)), __jsx(_chakra_ui_core__WEBPACK_IMPORTED_MODULE_5__["Box"], {
       mt: "2",
       fontWeight: "semibold",
       fontSize: "lg",
@@ -2200,19 +2184,19 @@ function FetchData() {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 85,
+        lineNumber: 81,
         columnNumber: 17
       }
-    }, __jsx(_chakra_ui_core__WEBPACK_IMPORTED_MODULE_6__["Link"], {
-      href: Job_url,
+    }, __jsx(_chakra_ui_core__WEBPACK_IMPORTED_MODULE_5__["Link"], {
+      href: Job_Url,
       isExternal: true,
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 92,
+        lineNumber: 88,
         columnNumber: 19
       }
-    }, Job_Position)), __jsx(_chakra_ui_core__WEBPACK_IMPORTED_MODULE_6__["Box"], {
+    }, Job_Position)), __jsx(_chakra_ui_core__WEBPACK_IMPORTED_MODULE_5__["Box"], {
       mt: "2",
       color: "gray.600",
       fontSize: "sm",
@@ -2220,7 +2204,7 @@ function FetchData() {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 96,
+        lineNumber: 92,
         columnNumber: 17
       }
     }, Job_Location));
@@ -2229,14 +2213,14 @@ function FetchData() {
 
 /***/ }),
 
-/***/ 6:
-/*!*******************************!*\
-  !*** multi ./pages/junior.js ***!
-  \*******************************/
+/***/ 3:
+/*!****************************!*\
+  !*** multi ./pages/mid.js ***!
+  \****************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\chris\Desktop\Jobaho\pages\junior.js */"./pages/junior.js");
+module.exports = __webpack_require__(/*! C:\Users\chris\Desktop\Jobaho\pages\mid.js */"./pages/mid.js");
 
 
 /***/ }),
@@ -2330,4 +2314,4 @@ module.exports = require("url");
 /***/ })
 
 /******/ });
-//# sourceMappingURL=junior.js.map
+//# sourceMappingURL=mid.js.map
