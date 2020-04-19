@@ -1,9 +1,19 @@
+import React from "react";
+import { useRouter } from "next/router";
 import useSWR from "swr";
 import JobCardsLayout from "../components/JobsectionCards";
 import fetch from "isomorphic-unfetch";
 import NextLink from "next/link";
 import Loader from "../components/LoadingLayout";
-import { Box, Flex, Text, Button, ButtonGroup, Link } from "@chakra-ui/core";
+import {
+  Box,
+  Flex,
+  Text,
+  Button,
+  ButtonGroup,
+  Link,
+  Input,
+} from "@chakra-ui/core";
 
 const fetcher = async (url) => {
   const res = await fetch(url);
@@ -16,15 +26,20 @@ const fetcher = async (url) => {
 };
 
 export default function FetchData() {
-  const { data, error } = useSWR("/api/juniorAPI", fetcher);
+  const { query } = useRouter();
+  // const { data, error } = useSWR("/api/juniorAPI", fetcher);
+  const [value, setValue] = React.useState("");
+  const { data, error } = useSWR(
+    `/api/juniorAPI${query.keyword ? "?keyword=" + query.keyword : ""}`,
+    fetcher
+  );
+  const handleChange = (event) => setValue(event.target.value);
+
+  console.log("Input value:", data);
 
   if (error) return <div>Failed to load entry level api</div>;
   if (!data) {
-    return (
-      <Loader>
-        <Text>Scraping Junior Level Jobs </Text>
-      </Loader>
-    );
+    return <Loader>Scraping Junior Level Jobs</Loader>;
   }
 
   //BOX ----> DIV
@@ -51,6 +66,12 @@ export default function FetchData() {
         >
           Number of Jobs: {data.length}
         </Text>
+        {/* <Input
+          value={value}
+          onChange={handleChange}
+          placeholder="Search Job Title"
+          size="md"
+        ></Input> */}
         <Flex flexWrap="wrap" justifyContent="center">
           {data.entry_level.map((res, index) => {
             const {

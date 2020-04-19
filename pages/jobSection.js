@@ -77,7 +77,7 @@ const JobCardSection = () => (
         mt={5}
       >
         <Box size="400px" pt={3}>
-          <Image src={midImage} alt="junior svg"></Image>
+          <Image src={midImage} alt="mid svg"></Image>
         </Box>
         <Box
           color="gray.500"
@@ -110,7 +110,7 @@ const JobCardSection = () => (
         mt={5}
       >
         <Box size="400px" pt={3}>
-          <Image src={seniorimage} alt="junior svg"></Image>
+          <Image src={seniorimage} alt="senior svg"></Image>
         </Box>
         <Box
           color="gray.500"
