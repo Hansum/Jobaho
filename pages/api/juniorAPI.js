@@ -13,7 +13,6 @@ export default async (req, res) => {
         entry_level.push(item);
       }
     }
-    console.log("array value", entry_level);
     const length = entry_level.length;
     const result = { entry_level, length };
     res.status(200).json(result);

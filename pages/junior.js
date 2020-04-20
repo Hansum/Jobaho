@@ -1,10 +1,11 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { useRouter } from "next/router";
-import useSWR from "swr";
+import useSWR, { mutate } from "swr";
 import JobCardsLayout from "../components/JobsectionCards";
 import fetch from "isomorphic-unfetch";
 import NextLink from "next/link";
 import Loader from "../components/LoadingLayout";
+import JobCards from "../components/CardsLayout";
 import {
   Box,
   Flex,
@@ -25,15 +26,68 @@ const fetcher = async (url) => {
   return data;
 };
 
+const SearchBar = ({ searchJob }) => {
+  const [value, setValue] = useState("");
+  const handleChange = (event) => setValue(event.target.value);
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (!value) return;
+    searchJob(value);
+    setValue("");
+  };
+
+  return (
+    <form onSubmit={handleSubmit}>
+      <Input
+        value={value}
+        onChange={handleChange}
+        placeholder="Search Job Title"
+        size="md"
+      ></Input>
+    </form>
+  );
+};
+
+// const searchJob = (text) => {
+//   // const { query } = useRouter();
+//   const { data, error } = useSWR(
+//     `/api/juniorAPI${text ? "?keyword=" + text : ""}`,
+//     fetcher
+//   );
+
+//   if (error) return <div>Failed to load entry level api</div>;
+//   if (!data) return <Loader>Scraping Junior Level Jobs</Loader>;
+
+//   return (
+//     <Flex flexWrap="wrap" justifyContent="center">
+//       {data.entry_level.map((res, index) => {
+//         const { Job_Position, Job_Company_Name, Job_Location, Job_url } = res;
+//         return (
+//           <JobCards
+//             index={index}
+//             title={Job_Position}
+//             company={Job_Company_Name}
+//             location={Job_Location}
+//             url={Job_url}
+//           ></JobCards>
+//         );
+//       })}
+//     </Flex>
+//   );
+// };
+
 export default function FetchData() {
-  const { query } = useRouter();
+  const searchJob = (text) => {
+    if (text) {
+    }
+  };
   // const { data, error } = useSWR("/api/juniorAPI", fetcher);
-  const [value, setValue] = React.useState("");
+  const { query } = useRouter();
   const { data, error } = useSWR(
     `/api/juniorAPI${query.keyword ? "?keyword=" + query.keyword : ""}`,
     fetcher
   );
-  const handleChange = (event) => setValue(event.target.value);
 
   console.log("Input value:", data);
 
@@ -66,12 +120,8 @@ export default function FetchData() {
         >
           Number of Jobs: {data.length}
         </Text>
-        {/* <Input
-          value={value}
-          onChange={handleChange}
-          placeholder="Search Job Title"
-          size="md"
-        ></Input> */}
+
+        {/* <SearchBar searchJob={searchJob}></SearchBar> */}
         <Flex flexWrap="wrap" justifyContent="center">
           {data.entry_level.map((res, index) => {
             const {
@@ -81,43 +131,13 @@ export default function FetchData() {
               Job_url,
             } = res;
             return (
-              <Box
-                m={3}
-                borderWidth="1px"
-                bg="white"
-                flex="0 1 24%"
-                p={6}
-                rounded="lg"
-                mt={5}
-                key={index}
-              >
-                <Box>
-                  <Box
-                    color="gray.500"
-                    fontWeight="semibold"
-                    letterSpacing="wide"
-                    textTransform="uppercase"
-                    fontSize="xs"
-                    textAlign="center"
-                  >
-                    {Job_Company_Name}
-                  </Box>
-                </Box>
-                <Box
-                  mt="2"
-                  fontWeight="semibold"
-                  fontSize="lg"
-                  textAlign="center"
-                  color="blue.600"
-                >
-                  <Link href={Job_url} isExternal>
-                    {Job_Position}
-                  </Link>
-                </Box>
-                <Box mt="2" color="gray.600" fontSize="sm" textAlign="center">
-                  {Job_Location}
-                </Box>
-              </Box>
+              <JobCards
+                index={index}
+                title={Job_Position}
+                company={Job_Company_Name}
+                location={Job_Location}
+                url={Job_url}
+              ></JobCards>
             );
           })}
         </Flex>

@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 5);
+/******/ 	return __webpack_require__(__webpack_require__.s = 3);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -112,6 +112,105 @@ module.exports = "/_next/static/images/cherry-searching-d0a97cfb379d20caaae1b497
 /***/ (function(module, exports) {
 
 module.exports = "data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB3aWR0aD0iMjRwdCIgaGVpZ2h0PSIyNHB0IiB2aWV3Qm94PSIwIDAgMjQgMjQiIHZlcnNpb249IjEuMSI+CjxnIGlkPSJzdXJmYWNlMTkxMyI+CjxwYXRoIHN0eWxlPSIgc3Ryb2tlOm5vbmU7ZmlsbC1ydWxlOm5vbnplcm87ZmlsbDpyZ2IoMTAwJSwxMDAlLDEwMCUpO2ZpbGwtb3BhY2l0eToxOyIgZD0iTSAyIDUgTCAyIDcgTCAyMiA3IEwgMjIgNSBaIE0gMiAxMSBMIDIgMTMgTCAyMiAxMyBMIDIyIDExIFogTSAyIDE3IEwgMiAxOSBMIDIyIDE5IEwgMjIgMTcgWiBNIDIgMTcgIi8+CjwvZz4KPC9zdmc+Cg=="
+
+/***/ }),
+
+/***/ "./components/CardsLayout.js":
+/*!***********************************!*\
+  !*** ./components/CardsLayout.js ***!
+  \***********************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _chakra_ui_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @chakra-ui/core */ "@chakra-ui/core");
+/* harmony import */ var _chakra_ui_core__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_chakra_ui_core__WEBPACK_IMPORTED_MODULE_1__);
+var _jsxFileName = "C:\\Users\\chris\\Desktop\\Jobaho\\components\\CardsLayout.js";
+
+var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
+
+const JobCards = ({
+  title,
+  company,
+  location,
+  url,
+  index
+}) => {
+  return __jsx(_chakra_ui_core__WEBPACK_IMPORTED_MODULE_1__["Box"], {
+    m: ["15px", "20px", "10px"],
+    borderWidth: "1px",
+    bg: "white",
+    flex: "0 1 24%",
+    p: [20, 4, 6],
+    rounded: "lg",
+    mt: 5,
+    key: index,
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 13,
+      columnNumber: 5
+    }
+  }, __jsx(_chakra_ui_core__WEBPACK_IMPORTED_MODULE_1__["Box"], {
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 23,
+      columnNumber: 7
+    }
+  }, __jsx(_chakra_ui_core__WEBPACK_IMPORTED_MODULE_1__["Box"], {
+    color: "gray.500",
+    fontWeight: "semibold",
+    letterSpacing: "wide",
+    textTransform: "uppercase",
+    fontSize: "xs",
+    textAlign: "center",
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 24,
+      columnNumber: 9
+    }
+  }, company)), __jsx(_chakra_ui_core__WEBPACK_IMPORTED_MODULE_1__["Box"], {
+    mt: "2",
+    fontWeight: "semibold",
+    fontSize: "lg",
+    textAlign: "center",
+    color: "blue.600",
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 35,
+      columnNumber: 7
+    }
+  }, __jsx(_chakra_ui_core__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+    href: url,
+    isExternal: true,
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 42,
+      columnNumber: 9
+    }
+  }, title)), __jsx(_chakra_ui_core__WEBPACK_IMPORTED_MODULE_1__["Box"], {
+    mt: "2",
+    color: "gray.600",
+    fontSize: "sm",
+    textAlign: "center",
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 46,
+      columnNumber: 7
+    }
+  }, location));
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (JobCards);
 
 /***/ }),
 
@@ -2040,10 +2139,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! next/link */ "./node_modules/next/link.js");
 /* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_5__);
 /* harmony import */ var _components_LoadingLayout__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../components/LoadingLayout */ "./components/LoadingLayout.js");
-/* harmony import */ var _chakra_ui_core__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @chakra-ui/core */ "@chakra-ui/core");
-/* harmony import */ var _chakra_ui_core__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(_chakra_ui_core__WEBPACK_IMPORTED_MODULE_7__);
+/* harmony import */ var _components_CardsLayout__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../components/CardsLayout */ "./components/CardsLayout.js");
+/* harmony import */ var _chakra_ui_core__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @chakra-ui/core */ "@chakra-ui/core");
+/* harmony import */ var _chakra_ui_core__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(_chakra_ui_core__WEBPACK_IMPORTED_MODULE_8__);
 var _jsxFileName = "C:\\Users\\chris\\Desktop\\Jobaho\\pages\\junior.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
 
 
 
@@ -2064,25 +2165,89 @@ const fetcher = async url => {
   return data;
 };
 
+const SearchBar = ({
+  searchJob
+}) => {
+  const {
+    0: value,
+    1: setValue
+  } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])("");
+
+  const handleChange = event => setValue(event.target.value);
+
+  const handleSubmit = e => {
+    e.preventDefault();
+    if (!value) return;
+    searchJob(value);
+    setValue("");
+  };
+
+  return __jsx("form", {
+    onSubmit: handleSubmit,
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 41,
+      columnNumber: 5
+    }
+  }, __jsx(_chakra_ui_core__WEBPACK_IMPORTED_MODULE_8__["Input"], {
+    value: value,
+    onChange: handleChange,
+    placeholder: "Search Job Title",
+    size: "md",
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 42,
+      columnNumber: 7
+    }
+  }));
+}; // const searchJob = (text) => {
+//   // const { query } = useRouter();
+//   const { data, error } = useSWR(
+//     `/api/juniorAPI${text ? "?keyword=" + text : ""}`,
+//     fetcher
+//   );
+//   if (error) return <div>Failed to load entry level api</div>;
+//   if (!data) return <Loader>Scraping Junior Level Jobs</Loader>;
+//   return (
+//     <Flex flexWrap="wrap" justifyContent="center">
+//       {data.entry_level.map((res, index) => {
+//         const { Job_Position, Job_Company_Name, Job_Location, Job_url } = res;
+//         return (
+//           <JobCards
+//             index={index}
+//             title={Job_Position}
+//             company={Job_Company_Name}
+//             location={Job_Location}
+//             url={Job_url}
+//           ></JobCards>
+//         );
+//       })}
+//     </Flex>
+//   );
+// };
+
+
 function FetchData() {
+  const searchJob = text => {
+    if (text) {}
+  }; // const { data, error } = useSWR("/api/juniorAPI", fetcher);
+
+
   const {
     query
-  } = Object(next_router__WEBPACK_IMPORTED_MODULE_1__["useRouter"])(); // const { data, error } = useSWR("/api/juniorAPI", fetcher);
-
-  const [value, setValue] = react__WEBPACK_IMPORTED_MODULE_0___default.a.useState("");
+  } = Object(next_router__WEBPACK_IMPORTED_MODULE_1__["useRouter"])();
   const {
     data,
     error
   } = swr__WEBPACK_IMPORTED_MODULE_2___default()(`/api/juniorAPI${query.keyword ? "?keyword=" + query.keyword : ""}`, fetcher);
-
-  const handleChange = event => setValue(event.target.value);
-
   console.log("Input value:", data);
   if (error) return __jsx("div", {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 40,
+      lineNumber: 94,
       columnNumber: 21
     }
   }, "Failed to load entry level api");
@@ -2092,7 +2257,7 @@ function FetchData() {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 42,
+        lineNumber: 96,
         columnNumber: 12
       }
     }, "Scraping Junior Level Jobs");
@@ -2103,26 +2268,26 @@ function FetchData() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 47,
+      lineNumber: 101,
       columnNumber: 5
     }
-  }, __jsx(_chakra_ui_core__WEBPACK_IMPORTED_MODULE_7__["Box"], {
+  }, __jsx(_chakra_ui_core__WEBPACK_IMPORTED_MODULE_8__["Box"], {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 48,
+      lineNumber: 102,
       columnNumber: 7
     }
-  }, __jsx(_chakra_ui_core__WEBPACK_IMPORTED_MODULE_7__["Box"], {
+  }, __jsx(_chakra_ui_core__WEBPACK_IMPORTED_MODULE_8__["Box"], {
     p: 3,
     textAlign: "center",
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 49,
+      lineNumber: 103,
       columnNumber: 9
     }
-  }, __jsx(_chakra_ui_core__WEBPACK_IMPORTED_MODULE_7__["Text"], {
+  }, __jsx(_chakra_ui_core__WEBPACK_IMPORTED_MODULE_8__["Text"], {
     color: "white",
     textAlign: "center",
     fontSize: "40px",
@@ -2130,10 +2295,10 @@ function FetchData() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 50,
+      lineNumber: 104,
       columnNumber: 11
     }
-  }, "Junior / Entry Level Jobs")), __jsx(_chakra_ui_core__WEBPACK_IMPORTED_MODULE_7__["Text"], {
+  }, "Junior / Entry Level Jobs")), __jsx(_chakra_ui_core__WEBPACK_IMPORTED_MODULE_8__["Text"], {
     color: "white",
     m: 5,
     textAlign: "center",
@@ -2142,27 +2307,24 @@ function FetchData() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 60,
+      lineNumber: 114,
       columnNumber: 9
     }
-  }, "Number of Jobs: ", data.length), __jsx(_chakra_ui_core__WEBPACK_IMPORTED_MODULE_7__["Input"], {
-    value: value,
-    onChange: handleChange,
-    placeholder: "Search Job Title",
-    size: "md",
+  }, "Number of Jobs: ", data.length), __jsx(SearchBar, {
+    searchJob: searchJob,
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 69,
+      lineNumber: 124,
       columnNumber: 9
     }
-  }), __jsx(_chakra_ui_core__WEBPACK_IMPORTED_MODULE_7__["Flex"], {
+  }), __jsx(_chakra_ui_core__WEBPACK_IMPORTED_MODULE_8__["Flex"], {
     flexWrap: "wrap",
     justifyContent: "center",
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 75,
+      lineNumber: 125,
       columnNumber: 9
     }
   }, data.entry_level.map((res, index) => {
@@ -2172,80 +2334,25 @@ function FetchData() {
       Job_Location,
       Job_url
     } = res;
-    return __jsx(_chakra_ui_core__WEBPACK_IMPORTED_MODULE_7__["Box"], {
-      m: 3,
-      borderWidth: "1px",
-      bg: "white",
-      flex: "0 1 24%",
-      p: 6,
-      rounded: "lg",
-      mt: 5,
-      key: index,
+    return __jsx(_components_CardsLayout__WEBPACK_IMPORTED_MODULE_7__["default"], {
+      index: index,
+      title: Job_Position,
+      company: Job_Company_Name,
+      location: Job_Location,
+      url: Job_url,
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 84,
+        lineNumber: 134,
         columnNumber: 15
       }
-    }, __jsx(_chakra_ui_core__WEBPACK_IMPORTED_MODULE_7__["Box"], {
-      __self: this,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 94,
-        columnNumber: 17
-      }
-    }, __jsx(_chakra_ui_core__WEBPACK_IMPORTED_MODULE_7__["Box"], {
-      color: "gray.500",
-      fontWeight: "semibold",
-      letterSpacing: "wide",
-      textTransform: "uppercase",
-      fontSize: "xs",
-      textAlign: "center",
-      __self: this,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 95,
-        columnNumber: 19
-      }
-    }, Job_Company_Name)), __jsx(_chakra_ui_core__WEBPACK_IMPORTED_MODULE_7__["Box"], {
-      mt: "2",
-      fontWeight: "semibold",
-      fontSize: "lg",
-      textAlign: "center",
-      color: "blue.600",
-      __self: this,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 106,
-        columnNumber: 17
-      }
-    }, __jsx(_chakra_ui_core__WEBPACK_IMPORTED_MODULE_7__["Link"], {
-      href: Job_url,
-      isExternal: true,
-      __self: this,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 113,
-        columnNumber: 19
-      }
-    }, Job_Position)), __jsx(_chakra_ui_core__WEBPACK_IMPORTED_MODULE_7__["Box"], {
-      mt: "2",
-      color: "gray.600",
-      fontSize: "sm",
-      textAlign: "center",
-      __self: this,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 117,
-        columnNumber: 17
-      }
-    }, Job_Location));
+    });
   }))));
 }
 
 /***/ }),
 
-/***/ 5:
+/***/ 3:
 /*!*******************************!*\
   !*** multi ./pages/junior.js ***!
   \*******************************/
