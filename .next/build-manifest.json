@@ -22,15 +22,11 @@
       "static/runtime/polyfills.js",
       "static/runtime/polyfills.js.map"
     ],
+    "/jobSection": [
+      "static/runtime/webpack.js",
+      "static/runtime/main.js"
+    ],
     "/junior": [
-      "static/runtime/webpack.js",
-      "static/runtime/main.js"
-    ],
-    "/mid": [
-      "static/runtime/webpack.js",
-      "static/runtime/main.js"
-    ],
-    "/senior": [
       "static/runtime/webpack.js",
       "static/runtime/main.js"
     ]

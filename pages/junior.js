@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useRouter } from "next/router";
+import Router, { useRouter } from "next/router";
 import useSWR, { mutate } from "swr";
 import JobCardsLayout from "../components/JobsectionCards";
 import fetch from "isomorphic-unfetch";
@@ -16,8 +16,8 @@ import {
   Input,
 } from "@chakra-ui/core";
 
-const fetcher = async (url) => {
-  const res = await fetch(url);
+const fetcher = async (...url) => {
+  const res = await fetch(...url);
   const data = await res.json();
 
   if (res.status !== 200) {
@@ -26,70 +26,24 @@ const fetcher = async (url) => {
   return data;
 };
 
-const SearchBar = ({ searchJob }) => {
+export default function FetchData(req, res) {
   const [value, setValue] = useState("");
-  const handleChange = (event) => setValue(event.target.value);
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    if (!value) return;
-    searchJob(value);
-    setValue("");
-  };
-
-  return (
-    <form onSubmit={handleSubmit}>
-      <Input
-        value={value}
-        onChange={handleChange}
-        placeholder="Search Job Title"
-        size="md"
-      ></Input>
-    </form>
-  );
-};
-
-// const searchJob = (text) => {
-//   // const { query } = useRouter();
-//   const { data, error } = useSWR(
-//     `/api/juniorAPI${text ? "?keyword=" + text : ""}`,
-//     fetcher
-//   );
-
-//   if (error) return <div>Failed to load entry level api</div>;
-//   if (!data) return <Loader>Scraping Junior Level Jobs</Loader>;
-
-//   return (
-//     <Flex flexWrap="wrap" justifyContent="center">
-//       {data.entry_level.map((res, index) => {
-//         const { Job_Position, Job_Company_Name, Job_Location, Job_url } = res;
-//         return (
-//           <JobCards
-//             index={index}
-//             title={Job_Position}
-//             company={Job_Company_Name}
-//             location={Job_Location}
-//             url={Job_url}
-//           ></JobCards>
-//         );
-//       })}
-//     </Flex>
-//   );
-// };
-
-export default function FetchData() {
-  const searchJob = (text) => {
-    if (text) {
-    }
-  };
-  // const { data, error } = useSWR("/api/juniorAPI", fetcher);
   const { query } = useRouter();
+  // const { data, error } = useSWR("/api/juniorAPI", fetcher);
+
   const { data, error } = useSWR(
-    `/api/juniorAPI${query.keyword ? "?keyword=" + query.keyword : ""}`,
+    `/api/juniorAPI${query.title ? "?keyword=" + query.title : ""}`,
     fetcher
   );
 
-  console.log("Input value:", data);
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    Router.push({
+      pathname: "/junior",
+      query: { title: value },
+    });
+  };
 
   if (error) return <div>Failed to load entry level api</div>;
   if (!data) {
@@ -120,8 +74,18 @@ export default function FetchData() {
         >
           Number of Jobs: {data.length}
         </Text>
-
-        {/* <SearchBar searchJob={searchJob}></SearchBar> */}
+        <Flex justifyContent="center">
+          <form onSubmit={handleSubmit}>
+            <Input
+              textAlign="center"
+              type="text"
+              size="lg"
+              placeholder="Search job position.."
+              value={value}
+              onChange={(event) => setValue(event.target.value)}
+            ></Input>
+          </form>
+        </Flex>
         <Flex flexWrap="wrap" justifyContent="center">
           {data.entry_level.map((res, index) => {
             const {

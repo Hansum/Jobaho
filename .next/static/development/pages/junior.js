@@ -52,7 +52,7 @@ var JobCards = function JobCards(_ref) {
     borderWidth: "1px",
     bg: "white",
     flex: "0 1 24%",
-    p: [20, 4, 6],
+    p: [20, 12, 6],
     rounded: "lg",
     mt: 5,
     key: index,
@@ -37423,10 +37423,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_CardsLayout__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../components/CardsLayout */ "./components/CardsLayout.js");
 /* harmony import */ var _chakra_ui_core__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @chakra-ui/core */ "./node_modules/@chakra-ui/core/dist/es/index.js");
 
-
-var _this = undefined,
-    _jsxFileName = "C:\\Users\\chris\\Desktop\\Jobaho\\pages\\junior.js";
-
+var _jsxFileName = "C:\\Users\\chris\\Desktop\\Jobaho\\pages\\junior.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement;
 
 
@@ -37438,14 +37435,16 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement;
 
 
 
-var fetcher = function fetcher(url) {
-  var res, data;
+var fetcher = function fetcher() {
+  var res,
+      data,
+      _args = arguments;
   return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.async(function fetcher$(_context) {
     while (1) {
       switch (_context.prev = _context.next) {
         case 0:
           _context.next = 2;
-          return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.awrap(isomorphic_unfetch__WEBPACK_IMPORTED_MODULE_5___default()(url));
+          return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.awrap(isomorphic_unfetch__WEBPACK_IMPORTED_MODULE_5___default.a.apply(void 0, _args));
 
         case 2:
           res = _context.sent;
@@ -37473,92 +37472,47 @@ var fetcher = function fetcher(url) {
   }, null, null, null, Promise);
 };
 
-var SearchBar = function SearchBar(_ref) {
-  var searchJob = _ref.searchJob;
+function FetchData(req, res) {
+  var _this = this;
 
   var _useState = Object(react__WEBPACK_IMPORTED_MODULE_1__["useState"])(""),
       value = _useState[0],
       setValue = _useState[1];
 
-  var handleChange = function handleChange(event) {
-    return setValue(event.target.value);
-  };
-
-  var handleSubmit = function handleSubmit(e) {
-    e.preventDefault();
-    if (!value) return;
-    searchJob(value);
-    setValue("");
-  };
-
-  return __jsx("form", {
-    onSubmit: handleSubmit,
-    __self: _this,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 41,
-      columnNumber: 5
-    }
-  }, __jsx(_chakra_ui_core__WEBPACK_IMPORTED_MODULE_9__["Input"], {
-    value: value,
-    onChange: handleChange,
-    placeholder: "Search Job Title",
-    size: "md",
-    __self: _this,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 42,
-      columnNumber: 7
-    }
-  }));
-}; // const searchJob = (text) => {
-//   // const { query } = useRouter();
-//   const { data, error } = useSWR(
-//     `/api/juniorAPI${text ? "?keyword=" + text : ""}`,
-//     fetcher
-//   );
-//   if (error) return <div>Failed to load entry level api</div>;
-//   if (!data) return <Loader>Scraping Junior Level Jobs</Loader>;
-//   return (
-//     <Flex flexWrap="wrap" justifyContent="center">
-//       {data.entry_level.map((res, index) => {
-//         const { Job_Position, Job_Company_Name, Job_Location, Job_url } = res;
-//         return (
-//           <JobCards
-//             index={index}
-//             title={Job_Position}
-//             company={Job_Company_Name}
-//             location={Job_Location}
-//             url={Job_url}
-//           ></JobCards>
-//         );
-//       })}
-//     </Flex>
-//   );
-// };
-
-
-function FetchData() {
-  var _this2 = this;
-
-  var searchJob = function searchJob(text) {
-    if (text) {}
-  }; // const { data, error } = useSWR("/api/juniorAPI", fetcher);
-
-
   var _useRouter = Object(next_router__WEBPACK_IMPORTED_MODULE_2__["useRouter"])(),
-      query = _useRouter.query;
+      query = _useRouter.query; // const { data, error } = useSWR("/api/juniorAPI", fetcher);
 
-  var _useSWR = Object(swr__WEBPACK_IMPORTED_MODULE_3__["default"])("/api/juniorAPI".concat(query.keyword ? "?keyword=" + query.keyword : ""), fetcher),
+
+  var _useSWR = Object(swr__WEBPACK_IMPORTED_MODULE_3__["default"])("/api/juniorAPI".concat(query.title ? "?keyword=" + query.title : ""), fetcher),
       data = _useSWR.data,
       error = _useSWR.error;
 
-  console.log("Input value:", data);
+  var handleSubmit = function handleSubmit(e) {
+    return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.async(function handleSubmit$(_context2) {
+      while (1) {
+        switch (_context2.prev = _context2.next) {
+          case 0:
+            e.preventDefault();
+            next_router__WEBPACK_IMPORTED_MODULE_2___default.a.push({
+              pathname: "/junior",
+              query: {
+                title: value
+              }
+            });
+
+          case 2:
+          case "end":
+            return _context2.stop();
+        }
+      }
+    }, null, null, null, Promise);
+  };
+
   if (error) return __jsx("div", {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 94,
+      lineNumber: 48,
       columnNumber: 21
     }
   }, "Failed to load entry level api");
@@ -37568,7 +37522,7 @@ function FetchData() {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 96,
+        lineNumber: 50,
         columnNumber: 12
       }
     }, "Scraping Junior Level Jobs");
@@ -37579,14 +37533,14 @@ function FetchData() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 101,
+      lineNumber: 55,
       columnNumber: 5
     }
   }, __jsx(_chakra_ui_core__WEBPACK_IMPORTED_MODULE_9__["Box"], {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 102,
+      lineNumber: 56,
       columnNumber: 7
     }
   }, __jsx(_chakra_ui_core__WEBPACK_IMPORTED_MODULE_9__["Box"], {
@@ -37595,7 +37549,7 @@ function FetchData() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 103,
+      lineNumber: 57,
       columnNumber: 9
     }
   }, __jsx(_chakra_ui_core__WEBPACK_IMPORTED_MODULE_9__["Text"], {
@@ -37606,7 +37560,7 @@ function FetchData() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 104,
+      lineNumber: 58,
       columnNumber: 11
     }
   }, "Junior / Entry Level Jobs")), __jsx(_chakra_ui_core__WEBPACK_IMPORTED_MODULE_9__["Text"], {
@@ -37618,24 +37572,47 @@ function FetchData() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 114,
+      lineNumber: 68,
       columnNumber: 9
     }
-  }, "Number of Jobs: ", data.length), __jsx(SearchBar, {
-    searchJob: searchJob,
+  }, "Number of Jobs: ", data.length), __jsx(_chakra_ui_core__WEBPACK_IMPORTED_MODULE_9__["Flex"], {
+    justifyContent: "center",
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 124,
+      lineNumber: 77,
       columnNumber: 9
     }
-  }), __jsx(_chakra_ui_core__WEBPACK_IMPORTED_MODULE_9__["Flex"], {
+  }, __jsx("form", {
+    onSubmit: handleSubmit,
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 78,
+      columnNumber: 11
+    }
+  }, __jsx(_chakra_ui_core__WEBPACK_IMPORTED_MODULE_9__["Input"], {
+    textAlign: "center",
+    type: "text",
+    size: "lg",
+    placeholder: "Search job position..",
+    value: value,
+    onChange: function onChange(event) {
+      return setValue(event.target.value);
+    },
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 79,
+      columnNumber: 13
+    }
+  }))), __jsx(_chakra_ui_core__WEBPACK_IMPORTED_MODULE_9__["Flex"], {
     flexWrap: "wrap",
     justifyContent: "center",
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 125,
+      lineNumber: 89,
       columnNumber: 9
     }
   }, data.entry_level.map(function (res, index) {
@@ -37649,10 +37626,10 @@ function FetchData() {
       company: Job_Company_Name,
       location: Job_Location,
       url: Job_url,
-      __self: _this2,
+      __self: _this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 134,
+        lineNumber: 98,
         columnNumber: 15
       }
     });
@@ -37661,7 +37638,7 @@ function FetchData() {
 
 /***/ }),
 
-/***/ 3:
+/***/ 5:
 /*!**********************************************************************************************************************************!*\
   !*** multi next-client-pages-loader?page=%2Fjunior&absolutePagePath=C%3A%5CUsers%5Cchris%5CDesktop%5CJobaho%5Cpages%5Cjunior.js ***!
   \**********************************************************************************************************************************/
@@ -37684,5 +37661,5 @@ module.exports = dll_82519ec661270f7f484f;
 
 /***/ })
 
-},[[3,"static/runtime/webpack.js"]]]);
+},[[5,"static/runtime/webpack.js"]]]);
 //# sourceMappingURL=junior.js.map

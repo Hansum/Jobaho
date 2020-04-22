@@ -9,6 +9,7 @@ const layoutStyle = {
 const Layout = (Page) => {
   return () => (
     <div>
+      <title>Jobaho</title>
       <Navbar />
       <Page />
     </div>

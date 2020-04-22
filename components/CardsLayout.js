@@ -15,7 +15,7 @@ const JobCards = ({ title, company, location, url, index }) => {
       borderWidth="1px"
       bg="white"
       flex="0 1 24%"
-      p={[20, 4, 6]}
+      p={[20, 12, 6]}
       rounded="lg"
       mt={5}
       key={index}

@@ -1,21 +1,20 @@
 import JuniorJobData from "../../data/juniorData";
 
 export default async (req, res) => {
-  const entry_level = [];
+  const data = [];
   const { keyword } = req.query; // Keyword is case sensitive
   const retval = await JuniorJobData();
 
   if (keyword) {
     for (let item of retval.entry_level) {
-      const exists = item.Job_Position.includes(keyword);
+      const exists = item.Job_Position.toLowerCase().includes(keyword);
 
       if (exists) {
-        entry_level.push(item);
+        data.push(item);
       }
     }
-    const length = entry_level.length;
-    const result = { entry_level, length };
-    res.status(200).json(result);
+
+    res.status(200).json({ entry_level: data, length: data.length });
   } else {
     res.status(200).json(retval);
   }

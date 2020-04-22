@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 4);
+/******/ 	return __webpack_require__(__webpack_require__.s = 7);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -169,7 +169,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _data_juniorData__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_data_juniorData__WEBPACK_IMPORTED_MODULE_0__);
 
 /* harmony default export */ __webpack_exports__["default"] = (async (req, res) => {
-  const entry_level = [];
+  const data = [];
   const {
     keyword
   } = req.query; // Keyword is case sensitive
@@ -178,19 +178,17 @@ __webpack_require__.r(__webpack_exports__);
 
   if (keyword) {
     for (let item of retval.entry_level) {
-      const exists = item.Job_Position.includes(keyword);
+      const exists = item.Job_Position.toLowerCase().includes(keyword);
 
       if (exists) {
-        entry_level.push(item);
+        data.push(item);
       }
     }
 
-    const length = entry_level.length;
-    const result = {
-      entry_level,
-      length
-    };
-    res.status(200).json(result);
+    res.status(200).json({
+      entry_level: data,
+      length: data.length
+    });
   } else {
     res.status(200).json(retval);
   }
@@ -198,7 +196,7 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ 4:
+/***/ 7:
 /*!**************************************!*\
   !*** multi ./pages/api/juniorAPI.js ***!
   \**************************************/
