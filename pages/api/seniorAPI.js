@@ -7,7 +7,7 @@ export default async (req, res) => {
 
   if (keyword) {
     for (let item of retval) {
-      const exists = item.title.toLowerCase().includes(keyword);
+      const exists = item.title.toLowerCase().includes(keyword.toLowerCase());
 
       if (exists) {
         data.push(item);

@@ -1,4 +1,4 @@
-(window["webpackJsonp"] = window["webpackJsonp"] || []).push([["static\\development\\pages\\mid.js"],{
+(window["webpackJsonp"] = window["webpackJsonp"] || []).push([["static\\development\\pages\\junior.js"],{
 
 /***/ "./assets/images/cherry-searching.svg":
 /*!********************************************!*\
@@ -21922,21 +21922,21 @@ var assign=Object.assign.bind(Object);function g(){return assign;}Object.defineP
 
 /***/ }),
 
-/***/ "./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2Fmid&absolutePagePath=C%3A%5CUsers%5Cchris%5CDesktop%5CJobaho%5Cpages%5Cmid.js!./":
-/*!************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2Fmid&absolutePagePath=C%3A%5CUsers%5Cchris%5CDesktop%5CJobaho%5Cpages%5Cmid.js ***!
-  \************************************************************************************************************************************************************************/
+/***/ "./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2Fjunior&absolutePagePath=C%3A%5CUsers%5Cchris%5CDesktop%5CJobaho%5Cpages%5Cjunior.js!./":
+/*!******************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2Fjunior&absolutePagePath=C%3A%5CUsers%5Cchris%5CDesktop%5CJobaho%5Cpages%5Cjunior.js ***!
+  \******************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 
-    (window.__NEXT_P=window.__NEXT_P||[]).push(["/mid", function() {
-      var mod = __webpack_require__(/*! ./pages/mid.js */ "./pages/mid.js")
+    (window.__NEXT_P=window.__NEXT_P||[]).push(["/junior", function() {
+      var mod = __webpack_require__(/*! ./pages/junior.js */ "./pages/junior.js")
       if(true) {
-        module.hot.accept(/*! ./pages/mid.js */ "./pages/mid.js", function() {
-          if(!next.router.components["/mid"]) return
-          var updatedPage = __webpack_require__(/*! ./pages/mid.js */ "./pages/mid.js")
-          next.router.update("/mid", updatedPage)
+        module.hot.accept(/*! ./pages/junior.js */ "./pages/junior.js", function() {
+          if(!next.router.components["/junior"]) return
+          var updatedPage = __webpack_require__(/*! ./pages/junior.js */ "./pages/junior.js")
+          next.router.update("/junior", updatedPage)
         })
       }
       return mod
@@ -37397,10 +37397,10 @@ var Navbar = function Navbar() {
 
 /***/ }),
 
-/***/ "./pages/mid.js":
-/*!**********************!*\
-  !*** ./pages/mid.js ***!
-  \**********************/
+/***/ "./pages/junior.js":
+/*!*************************!*\
+  !*** ./pages/junior.js ***!
+  \*************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -37415,13 +37415,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(next_router__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var swr__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! swr */ "./node_modules/swr/esm/index.js");
 /* harmony import */ var _components_JobsectionCards__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../components/JobsectionCards */ "./components/JobsectionCards.js");
-/* harmony import */ var _components_LoadingLayout__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../components/LoadingLayout */ "./components/LoadingLayout.js");
-/* harmony import */ var isomorphic_unfetch__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! isomorphic-unfetch */ "./node_modules/next/dist/build/polyfills/fetch/index.js");
-/* harmony import */ var isomorphic_unfetch__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(isomorphic_unfetch__WEBPACK_IMPORTED_MODULE_6__);
-/* harmony import */ var _components_CardsLayout__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../components/CardsLayout */ "./components/CardsLayout.js");
-/* harmony import */ var _chakra_ui_core__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @chakra-ui/core */ "./node_modules/@chakra-ui/core/dist/es/index.js");
+/* harmony import */ var isomorphic_unfetch__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! isomorphic-unfetch */ "./node_modules/next/dist/build/polyfills/fetch/index.js");
+/* harmony import */ var isomorphic_unfetch__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(isomorphic_unfetch__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! next/link */ "./node_modules/next/link.js");
+/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_6__);
+/* harmony import */ var _components_LoadingLayout__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../components/LoadingLayout */ "./components/LoadingLayout.js");
+/* harmony import */ var _components_CardsLayout__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../components/CardsLayout */ "./components/CardsLayout.js");
+/* harmony import */ var _chakra_ui_core__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @chakra-ui/core */ "./node_modules/@chakra-ui/core/dist/es/index.js");
 
-var _jsxFileName = "C:\\Users\\chris\\Desktop\\Jobaho\\pages\\mid.js";
+var _jsxFileName = "C:\\Users\\chris\\Desktop\\Jobaho\\pages\\junior.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement;
 
 
@@ -37432,14 +37434,17 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement;
 
 
 
-var fetcher = function fetcher(url) {
-  var res, data;
+
+var fetcher = function fetcher() {
+  var res,
+      data,
+      _args = arguments;
   return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.async(function fetcher$(_context) {
     while (1) {
       switch (_context.prev = _context.next) {
         case 0:
           _context.next = 2;
-          return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.awrap(isomorphic_unfetch__WEBPACK_IMPORTED_MODULE_6___default()(url));
+          return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.awrap(isomorphic_unfetch__WEBPACK_IMPORTED_MODULE_5___default.a.apply(void 0, _args));
 
         case 2:
           res = _context.sent;
@@ -37467,7 +37472,7 @@ var fetcher = function fetcher(url) {
   }, null, null, null, Promise);
 };
 
-function FetchData() {
+function FetchData(req, res) {
   var _this = this;
 
   var _useState = Object(react__WEBPACK_IMPORTED_MODULE_1__["useState"])(""),
@@ -37475,31 +37480,12 @@ function FetchData() {
       setValue = _useState[1];
 
   var _useRouter = Object(next_router__WEBPACK_IMPORTED_MODULE_2__["useRouter"])(),
-      query = _useRouter.query;
+      query = _useRouter.query; // const { data, error } = useSWR("/api/juniorAPI", fetcher);
 
-  var _useSWR = Object(swr__WEBPACK_IMPORTED_MODULE_3__["default"])("/api/midAPI".concat(query.title ? "?keyword=" + query.title : ""), fetcher),
+
+  var _useSWR = Object(swr__WEBPACK_IMPORTED_MODULE_3__["default"])("/api/juniorAPI".concat(query.title ? "?keyword=" + query.title : ""), fetcher),
       data = _useSWR.data,
       error = _useSWR.error;
-
-  if (error) return __jsx("div", {
-    __self: this,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 28,
-      columnNumber: 21
-    }
-  }, "Failed to load mid api");
-
-  if (!data) {
-    return __jsx(_components_LoadingLayout__WEBPACK_IMPORTED_MODULE_5__["default"], {
-      __self: this,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 30,
-        columnNumber: 12
-      }
-    }, "Scraping Mid Level Jobs");
-  }
 
   var handleSubmit = function handleSubmit(e) {
     return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.async(function handleSubmit$(_context2) {
@@ -37508,7 +37494,7 @@ function FetchData() {
           case 0:
             e.preventDefault();
             next_router__WEBPACK_IMPORTED_MODULE_2___default.a.push({
-              pathname: "/mid",
+              pathname: "/junior",
               query: {
                 title: value
               }
@@ -37520,36 +37506,64 @@ function FetchData() {
         }
       }
     }, null, null, null, Promise);
-  }; //BOX ----> DIV
+  };
+
+  if (error) return __jsx("div", {
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 48,
+      columnNumber: 21
+    }
+  }, "Failed to load entry level api");
+
+  if (!data) {
+    return __jsx(_components_LoadingLayout__WEBPACK_IMPORTED_MODULE_7__["default"], {
+      __self: this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 50,
+        columnNumber: 12
+      }
+    }, "Scraping Junior Level Jobs");
+  } //BOX ----> DIV
 
 
   return __jsx(_components_JobsectionCards__WEBPACK_IMPORTED_MODULE_4__["default"], {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 44,
+      lineNumber: 55,
       columnNumber: 5
     }
-  }, __jsx(_chakra_ui_core__WEBPACK_IMPORTED_MODULE_8__["Box"], {
+  }, __jsx(_chakra_ui_core__WEBPACK_IMPORTED_MODULE_9__["Box"], {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 45,
+      lineNumber: 56,
       columnNumber: 7
     }
-  }, __jsx(_chakra_ui_core__WEBPACK_IMPORTED_MODULE_8__["Text"], {
-    color: "white",
-    m: 5,
+  }, __jsx(_chakra_ui_core__WEBPACK_IMPORTED_MODULE_9__["Box"], {
+    p: 3,
     textAlign: "center",
-    fontSize: "30px",
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 57,
+      columnNumber: 9
+    }
+  }, __jsx(_chakra_ui_core__WEBPACK_IMPORTED_MODULE_9__["Text"], {
+    color: "white",
+    textAlign: "center",
+    fontSize: "40px",
     fontFamily: "Sen",
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 46,
-      columnNumber: 9
+      lineNumber: 58,
+      columnNumber: 11
     }
-  }, "Mid Level Jobs"), __jsx(_chakra_ui_core__WEBPACK_IMPORTED_MODULE_8__["Text"], {
+  }, "Junior / Entry Level Jobs")), __jsx(_chakra_ui_core__WEBPACK_IMPORTED_MODULE_9__["Text"], {
     color: "white",
     m: 5,
     textAlign: "center",
@@ -37558,15 +37572,15 @@ function FetchData() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 55,
+      lineNumber: 68,
       columnNumber: 9
     }
-  }, "Number of Jobs: ", data.length), __jsx(_chakra_ui_core__WEBPACK_IMPORTED_MODULE_8__["Flex"], {
+  }, "Number of Jobs: ", data.length), __jsx(_chakra_ui_core__WEBPACK_IMPORTED_MODULE_9__["Flex"], {
     justifyContent: "center",
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 64,
+      lineNumber: 77,
       columnNumber: 9
     }
   }, __jsx("form", {
@@ -37574,10 +37588,10 @@ function FetchData() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 65,
+      lineNumber: 78,
       columnNumber: 11
     }
-  }, __jsx(_chakra_ui_core__WEBPACK_IMPORTED_MODULE_8__["Input"], {
+  }, __jsx(_chakra_ui_core__WEBPACK_IMPORTED_MODULE_9__["Input"], {
     textAlign: "center",
     type: "text",
     size: "lg",
@@ -37589,32 +37603,33 @@ function FetchData() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 66,
+      lineNumber: 79,
       columnNumber: 13
     }
-  }))), __jsx(_chakra_ui_core__WEBPACK_IMPORTED_MODULE_8__["Flex"], {
+  }))), __jsx(_chakra_ui_core__WEBPACK_IMPORTED_MODULE_9__["Flex"], {
     flexWrap: "wrap",
     justifyContent: "center",
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 76,
+      lineNumber: 89,
       columnNumber: 9
     }
-  }, data.mid_level.map(function (res, index) {
-    var title = res.title,
-        company = res.company,
-        location = res.location,
-        url = res.url;
-    return __jsx(_components_CardsLayout__WEBPACK_IMPORTED_MODULE_7__["default"], {
-      title: title,
-      company: company,
-      location: location,
-      url: url,
+  }, data.entry_level.map(function (res, index) {
+    var Job_Position = res.Job_Position,
+        Job_Company_Name = res.Job_Company_Name,
+        Job_Location = res.Job_Location,
+        Job_url = res.Job_url;
+    return __jsx(_components_CardsLayout__WEBPACK_IMPORTED_MODULE_8__["default"], {
+      index: index,
+      title: Job_Position,
+      company: Job_Company_Name,
+      location: Job_Location,
+      url: Job_url,
       __self: _this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 80,
+        lineNumber: 98,
         columnNumber: 15
       }
     });
@@ -37623,14 +37638,14 @@ function FetchData() {
 
 /***/ }),
 
-/***/ 5:
-/*!****************************************************************************************************************************!*\
-  !*** multi next-client-pages-loader?page=%2Fmid&absolutePagePath=C%3A%5CUsers%5Cchris%5CDesktop%5CJobaho%5Cpages%5Cmid.js ***!
-  \****************************************************************************************************************************/
+/***/ 3:
+/*!**********************************************************************************************************************************!*\
+  !*** multi next-client-pages-loader?page=%2Fjunior&absolutePagePath=C%3A%5CUsers%5Cchris%5CDesktop%5CJobaho%5Cpages%5Cjunior.js ***!
+  \**********************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! next-client-pages-loader?page=%2Fmid&absolutePagePath=C%3A%5CUsers%5Cchris%5CDesktop%5CJobaho%5Cpages%5Cmid.js! */"./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2Fmid&absolutePagePath=C%3A%5CUsers%5Cchris%5CDesktop%5CJobaho%5Cpages%5Cmid.js!./");
+module.exports = __webpack_require__(/*! next-client-pages-loader?page=%2Fjunior&absolutePagePath=C%3A%5CUsers%5Cchris%5CDesktop%5CJobaho%5Cpages%5Cjunior.js! */"./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2Fjunior&absolutePagePath=C%3A%5CUsers%5Cchris%5CDesktop%5CJobaho%5Cpages%5Cjunior.js!./");
 
 
 /***/ }),
@@ -37646,5 +37661,5 @@ module.exports = dll_82519ec661270f7f484f;
 
 /***/ })
 
-},[[5,"static/runtime/webpack.js"]]]);
-//# sourceMappingURL=mid.js.map
+},[[3,"static/runtime/webpack.js"]]]);
+//# sourceMappingURL=junior.js.map

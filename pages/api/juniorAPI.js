@@ -7,7 +7,9 @@ export default async (req, res) => {
 
   if (keyword) {
     for (let item of retval.entry_level) {
-      const exists = item.Job_Position.toLowerCase().includes(keyword);
+      const exists = item.Job_Position.toLowerCase().includes(
+        keyword.toLowerCase()
+      );
 
       if (exists) {
         data.push(item);
