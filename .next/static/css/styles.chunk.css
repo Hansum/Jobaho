@@ -71,10 +71,22 @@ img {
     width: 100%; }
   .topnav a:not(:first-child) {
     display: none; }
-  .chakra-menu {
-    margin: 27px;
+  .topnav a.icon {
+    float: right;
+    display: block; } }
+
+@media only screen and (max-width: 600px) {
+  .topnav.responsive {
+    position: relative; }
+  .topnav.responsive .icon {
+    position: absolute;
+    right: 0;
+    top: 0; }
+  .topnav.responsive a {
+    float: none;
     display: block;
-    float: right; } }
+    text-align: left;
+    color: white; } }
 
 
 /*# sourceMappingURL=styles.chunk.css.map*/
