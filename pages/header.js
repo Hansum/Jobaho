@@ -1,7 +1,6 @@
 import { useRef } from "react";
 import Link from "next/link";
 import menuIcon from "../assets/images/icons8-menu.svg";
-import { Menu, MenuButton, MenuList, MenuItem, Button } from "@chakra-ui/core";
 
 const Navbar = () => {
   const navbarRef = useRef(null);
@@ -15,7 +14,6 @@ const Navbar = () => {
     } else {
       x.className = "topnav";
     }
-    // console.log("classname", navbarRef.current.className);
   };
   return (
     <div className="topnav" id="myTopnav" ref={navbarRef}>

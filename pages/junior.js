@@ -86,6 +86,8 @@ export default function FetchData(req, res) {
             ></Input>
           </form>
         </Flex>
+
+        {/*cards*/}
         <Flex flexWrap="wrap" justifyContent="center">
           {data.entry_level.map((res, index) => {
             const {

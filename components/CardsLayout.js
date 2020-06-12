@@ -14,7 +14,8 @@ const JobCards = ({ title, company, location, url, index }) => {
       m={["15px", "20px", "10px"]}
       borderWidth="1px"
       bg="white"
-      flex="0 1 24%"
+      flex={{md:"0 1 calc(30% - 1em)", lg:"0 1 24%"}}
+      justify = {{md:"space-between", lg:"center"}}
       p={[20, 12, 6]}
       rounded="lg"
       mt={5}

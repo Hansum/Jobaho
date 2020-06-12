@@ -1863,12 +1863,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _assets_images_icons8_menu_svg__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../assets/images/icons8-menu.svg */ "./assets/images/icons8-menu.svg");
 /* harmony import */ var _assets_images_icons8_menu_svg__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_assets_images_icons8_menu_svg__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _chakra_ui_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @chakra-ui/core */ "@chakra-ui/core");
-/* harmony import */ var _chakra_ui_core__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_chakra_ui_core__WEBPACK_IMPORTED_MODULE_3__);
 var _jsxFileName = "C:\\Users\\chris\\Desktop\\Jobaho\\pages\\header.js";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
-
 
 
 
@@ -1884,8 +1881,7 @@ const Navbar = () => {
       x.className += " responsive";
     } else {
       x.className = "topnav";
-    } // console.log("classname", navbarRef.current.className);
-
+    }
   };
 
   return __jsx("div", {
@@ -1895,7 +1891,7 @@ const Navbar = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 21,
+      lineNumber: 19,
       columnNumber: 5
     }
   }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_1___default.a, {
@@ -1903,14 +1899,14 @@ const Navbar = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 22,
+      lineNumber: 20,
       columnNumber: 7
     }
   }, __jsx("a", {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 23,
+      lineNumber: 21,
       columnNumber: 9
     }
   }, "Jobaho")), __jsx(next_link__WEBPACK_IMPORTED_MODULE_1___default.a, {
@@ -1918,14 +1914,14 @@ const Navbar = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 25,
+      lineNumber: 23,
       columnNumber: 7
     }
   }, __jsx("a", {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 26,
+      lineNumber: 24,
       columnNumber: 9
     }
   }, "Find a Job")), __jsx(next_link__WEBPACK_IMPORTED_MODULE_1___default.a, {
@@ -1933,14 +1929,14 @@ const Navbar = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 28,
+      lineNumber: 26,
       columnNumber: 7
     }
   }, __jsx("a", {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 29,
+      lineNumber: 27,
       columnNumber: 9
     }
   }, "About")), __jsx(next_link__WEBPACK_IMPORTED_MODULE_1___default.a, {
@@ -1948,14 +1944,14 @@ const Navbar = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 31,
+      lineNumber: 29,
       columnNumber: 7
     }
   }, __jsx("a", {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 32,
+      lineNumber: 30,
       columnNumber: 9
     }
   }, "Home")), __jsx("a", {
@@ -1965,7 +1961,7 @@ const Navbar = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 35,
+      lineNumber: 33,
       columnNumber: 7
     }
   }, __jsx("img", {
@@ -1973,7 +1969,7 @@ const Navbar = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 36,
+      lineNumber: 34,
       columnNumber: 9
     }
   })));
@@ -2100,17 +2096,6 @@ const Page = () => __jsx("div", {
 
 module.exports = __webpack_require__(/*! C:\Users\chris\Desktop\Jobaho\pages\index.js */"./pages/index.js");
 
-
-/***/ }),
-
-/***/ "@chakra-ui/core":
-/*!**********************************!*\
-  !*** external "@chakra-ui/core" ***!
-  \**********************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = require("@chakra-ui/core");
 
 /***/ }),
 
