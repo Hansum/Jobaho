@@ -24,7 +24,7 @@
     "cors": "^2.8.5",
     "dotenv": "^8.2.0",
     "emotion-theming": "^10.0.27",
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "indeed-scraper": "^3.1.1",
     "isomorphic-unfetch": "^3.0.0",
     "minimist": ">=1.2.3",
